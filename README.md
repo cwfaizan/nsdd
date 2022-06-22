@@ -1,6 +1,6 @@
-# nsdd
+# NSDD, Natinal University of Technology, Islamabad
 
-A new Flutter project.
+Student Management System
 
 ## Getting Started
 

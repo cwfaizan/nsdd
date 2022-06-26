@@ -118,12 +118,19 @@ class _TestPageState extends State<TestPage> {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            child: const Text(
+            // child: const Text(
+            //   'Login',
+            //   style: TextStyle(
+            //     color: Colors.black,
+            //     fontWeight: FontWeight.bold,
+            //   ),
+            // ),
+            child: Text(
               'Login',
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-              ),
+              style: Theme.of(context)
+                  .textTheme
+                  .headline1!
+                  .copyWith(color: Colors.redAccent),
             ),
           ),
         ),
@@ -151,6 +158,10 @@ class _TestPageState extends State<TestPage> {
         borderSide: const BorderSide(color: Colors.transparent, width: 0),
       ),
       enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10.r),
+        borderSide: const BorderSide(color: Colors.transparent, width: 0),
+      ),
+      focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10.r),
         borderSide: const BorderSide(color: Colors.transparent, width: 0),
       ),

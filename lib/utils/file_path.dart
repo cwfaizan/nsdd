@@ -1,3 +1,3 @@
 class FilePath {
-  static const String logo = 'assets/images/logo.png';
+  static const String topRightCornerBg = 'assets/svgs/top_right_corner_bg.svg';
 }

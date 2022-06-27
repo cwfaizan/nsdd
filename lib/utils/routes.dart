@@ -10,7 +10,7 @@ class RouteGenerator {
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case splash:
+      case login:
         return MaterialPageRoute(builder: (_) => const LoginPage());
       default:
         throw RouteException('Route not found');

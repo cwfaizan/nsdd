@@ -16,7 +16,7 @@ final Map<AppTheme, ThemeData> appThemeData = {
     scaffoldBackgroundColor: kDarkBackground,
     backgroundColor: kDarkPlaceholder,
     errorColor: kDarkError,
-    textTheme: GoogleFonts.poppinsTextTheme(
+    textTheme: GoogleFonts.redHatDisplayTextTheme(
       const TextTheme().copyWith(
         headline1: TextStyle(
           fontSize: 48.sp,
@@ -53,37 +53,18 @@ final Map<AppTheme, ThemeData> appThemeData = {
         ),
       ),
     ),
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ButtonStyle(
-        elevation: MaterialStateProperty.all(0),
-        minimumSize: MaterialStateProperty.all(
-          Size(double.infinity, 56.h),
-        ),
-        shape: MaterialStateProperty.all(
-          const StadiumBorder(),
-        ),
-        foregroundColor: MaterialStateProperty.all(
-          kDarkTextColor,
-        ),
-        textStyle: MaterialStateProperty.all(
-          TextStyle(
-            fontSize: 16.sp,
-            color: kDarkTextColor,
-          ),
-        ),
-      ),
-    ),
-    textButtonTheme: TextButtonThemeData(
-      style: ButtonStyle(
-        foregroundColor: MaterialStateProperty.all(kDarkPrimary),
-        textStyle: MaterialStateProperty.all(
-          TextStyle(
-            fontSize: 16.sp,
-            color: kDarkPrimary,
-          ),
-        ),
-      ),
-    ),
+    // inputDecorationTheme: InputDecorationTheme(
+    //   border: kOutlineInputBorder,
+    //   enabledBorder: kOutlineInputBorder,
+    //   focusedBorder: kOutlineInputBorder,
+    //   filled: true,
+    //   fillColor: kLightBackground,
+    //   contentPadding: kContentPadding,
+    //   hintStyle: TextStyle(
+    //     fontSize: 14.sp,
+    //     fontWeight: FontWeight.w500,
+    //   ),
+    // ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: kDarkBackground,
       selectedItemColor: kDarkPrimary,
@@ -125,11 +106,12 @@ final Map<AppTheme, ThemeData> appThemeData = {
     scaffoldBackgroundColor: kLightBackground,
     backgroundColor: kLightPlaceholder,
     errorColor: kLightError,
-    textTheme: GoogleFonts.openSansTextTheme(
+    textTheme: GoogleFonts.redHatDisplayTextTheme(
       const TextTheme().copyWith(
         headline1: TextStyle(
-          fontSize: 48.sp,
-          color: kLightTextColor,
+          fontSize: 32.sp,
+          fontWeight: FontWeight.bold,
+          color: kLightPrimary,
         ),
         headline2: TextStyle(
           fontSize: 32.sp,
@@ -162,37 +144,18 @@ final Map<AppTheme, ThemeData> appThemeData = {
         ),
       ),
     ),
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ButtonStyle(
-        elevation: MaterialStateProperty.all(5),
-        minimumSize: MaterialStateProperty.all(
-          Size(double.infinity, 56.h),
-        ),
-        shape: MaterialStateProperty.all(
-          const StadiumBorder(),
-        ),
-        foregroundColor: MaterialStateProperty.all(
-          kDarkTextColor,
-        ),
-        textStyle: MaterialStateProperty.all(
-          TextStyle(
-            fontSize: 16.sp,
-            color: kDarkTextColor,
-          ),
-        ),
-      ),
-    ),
-    textButtonTheme: TextButtonThemeData(
-      style: ButtonStyle(
-        foregroundColor: MaterialStateProperty.all(kLightPrimary),
-        textStyle: MaterialStateProperty.all(
-          TextStyle(
-            fontSize: 16.sp,
-            color: kLightPrimary,
-          ),
-        ),
-      ),
-    ),
+    // inputDecorationTheme: InputDecorationTheme(
+    //   border: kOutlineInputBorder,
+    //   enabledBorder: kOutlineInputBorder,
+    //   focusedBorder: kOutlineInputBorder,
+    //   filled: true,
+    //   fillColor: kDarkBackground,
+    //   contentPadding: kContentPadding,
+    //   hintStyle: TextStyle(
+    //     fontSize: 14.sp,
+    //     fontWeight: FontWeight.w500,
+    //   ),
+    // ),
     appBarTheme: AppBarTheme(
       systemOverlayStyle: SystemUiOverlayStyle.dark,
       backgroundColor: kLightPrimary,

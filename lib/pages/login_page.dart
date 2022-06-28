@@ -28,8 +28,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           SafeArea(
-            child: Container(
-              width: double.infinity,
+            child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Form(
                 key: _globalKeyLoginForm,
@@ -41,26 +40,25 @@ class _LoginPageState extends State<LoginPage> {
                       'Login',
                       style: Theme.of(context).textTheme.headline1,
                     ),
+                    SizedBox(height: 15.h),
                     TextFormField(
-                      decoration: InputDecoration(
-                        hintText: 'Enter Email',
-                        border: InputBorder.none,
-                        fillColor: Colors.grey.shade100,
-                        filled: true,
+                      keyboardType: TextInputType.number,
+                      textInputAction: TextInputAction.next,
+                      decoration: const InputDecoration(
+                        prefixIcon: Icon(Icons.pin),
+                        hintText: 'Enter cnic number',
                       ),
                     ),
-                    SizedBox(height: 10.h),
+                    SizedBox(height: 15.h),
                     TextFormField(
-                      decoration: InputDecoration(
+                      keyboardType: TextInputType.text,
+                      textInputAction: TextInputAction.done,
+                      decoration: const InputDecoration(
+                        prefixIcon: Icon(Icons.key),
                         hintText: 'Enter Password',
-                        border: InputBorder.none,
-                        fillColor: Colors.grey.shade100,
-                        filled: true,
                       ),
                     ),
-                    SizedBox(
-                      height: 10.h,
-                    ),
+                    SizedBox(height: 15.h),
                     InkWell(
                       onTap: () {},
                       child: Align(
@@ -77,6 +75,10 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     SizedBox(
                       height: 25.h,
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text('Login'),
                     ),
                     Container(
                       width: double.infinity,

@@ -53,18 +53,18 @@ final Map<AppTheme, ThemeData> appThemeData = {
         ),
       ),
     ),
-    // inputDecorationTheme: InputDecorationTheme(
-    //   border: kOutlineInputBorder,
-    //   enabledBorder: kOutlineInputBorder,
-    //   focusedBorder: kOutlineInputBorder,
-    //   filled: true,
-    //   fillColor: kLightBackground,
-    //   contentPadding: kContentPadding,
-    //   hintStyle: TextStyle(
-    //     fontSize: 14.sp,
-    //     fontWeight: FontWeight.w500,
-    //   ),
-    // ),
+    inputDecorationTheme: InputDecorationTheme(
+      border: kOutlineInputBorder,
+      enabledBorder: kOutlineInputBorder,
+      focusedBorder: kOutlineInputBorder,
+      filled: true,
+      fillColor: kLightPlaceholder,
+      contentPadding: kContentPadding,
+      hintStyle: TextStyle(
+        fontSize: 14.sp,
+        fontWeight: FontWeight.w500,
+      ),
+    ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: kDarkBackground,
       selectedItemColor: kDarkPrimary,
@@ -144,18 +144,18 @@ final Map<AppTheme, ThemeData> appThemeData = {
         ),
       ),
     ),
-    // inputDecorationTheme: InputDecorationTheme(
-    //   border: kOutlineInputBorder,
-    //   enabledBorder: kOutlineInputBorder,
-    //   focusedBorder: kOutlineInputBorder,
-    //   filled: true,
-    //   fillColor: kDarkBackground,
-    //   contentPadding: kContentPadding,
-    //   hintStyle: TextStyle(
-    //     fontSize: 14.sp,
-    //     fontWeight: FontWeight.w500,
-    //   ),
-    // ),
+    inputDecorationTheme: InputDecorationTheme(
+      border: kOutlineInputBorder,
+      enabledBorder: kOutlineInputBorder,
+      focusedBorder: kOutlineInputBorder,
+      filled: true,
+      fillColor: kLightPlaceholder,
+      contentPadding: kContentPadding,
+      hintStyle: TextStyle(
+        fontSize: 14.sp,
+        fontWeight: FontWeight.w500,
+      ),
+    ),
     appBarTheme: AppBarTheme(
       systemOverlayStyle: SystemUiOverlayStyle.dark,
       backgroundColor: kLightPrimary,

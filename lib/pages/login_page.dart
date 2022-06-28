@@ -27,19 +27,103 @@ class _LoginPageState extends State<LoginPage> {
               width: 222.w,
             ),
           ),
-          Positioned(
-            top: 0,
-            child: SafeArea(
+          SafeArea(
+            child: Container(
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Form(
                 key: _globalKeyLoginForm,
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       'Login',
                       style: Theme.of(context).textTheme.headline1,
                     ),
-                    TextFormField(),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        hintText: 'Enter Email',
+                        border: InputBorder.none,
+                        fillColor: Colors.grey.shade100,
+                        filled: true,
+                      ),
+                    ),
+                    SizedBox(height: 10.h),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        hintText: 'Enter Password',
+                        border: InputBorder.none,
+                        fillColor: Colors.grey.shade100,
+                        filled: true,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    InkWell(
+                      onTap: () {},
+                      child: Align(
+                        alignment: Alignment.topRight,
+                        child: Text(
+                          'Forgot Password?',
+                          style: TextStyle(
+                            color: const Color(0xFF8B010B),
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 25.h,
+                    ),
+                    Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.symmetric(vertical: 15.h),
+                      decoration: BoxDecoration(
+                          color: Color(0xFF8B010B),
+                          borderRadius: BorderRadius.circular(10.r)),
+                      child: Text(
+                        'Login',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15.h,
+                    ),
+                    InkWell(
+                      onTap: () {},
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text.rich(
+                          TextSpan(
+                            children: [
+                              TextSpan(
+                                text: 'Don’t have an account? ',
+                                style: TextStyle(
+                                  fontSize: 14.sp,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              TextSpan(
+                                text: 'Register ',
+                                style: TextStyle(
+                                  fontSize: 14.sp,
+                                  color: const Color(0xFF8B010B),
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),

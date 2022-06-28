@@ -17,7 +17,7 @@ final themeDataDark = ThemeData.dark().copyWith(
       headline2: TextStyle(
         fontSize: 32.sp,
         fontWeight: FontWeight.bold,
-        color: kLightPrimaryColor,
+        color: kDarkTextColor,
       ),
       headline3: TextStyle(
         fontSize: 24.sp,
@@ -37,11 +37,19 @@ final themeDataDark = ThemeData.dark().copyWith(
         color: kDarkTextColor,
       ),
       bodyText1: TextStyle(
-        fontSize: 12.sp,
+        fontSize: 14.sp,
         color: kDarkTextColor,
       ),
       bodyText2: TextStyle(
-        fontSize: 14.sp,
+        fontSize: 12.sp,
+        color: kDarkTextColor,
+      ),
+      button: TextStyle(
+        fontSize: 17.sp,
+        fontWeight: FontWeight.bold,
+        color: kBlackColor,
+      ),
+      subtitle1: const TextStyle(
         color: kDarkTextColor,
       ),
     ),
@@ -51,7 +59,7 @@ final themeDataDark = ThemeData.dark().copyWith(
     enabledBorder: kOutlineInputBorder,
     focusedBorder: kOutlineInputBorder,
     filled: true,
-    fillColor: kLightPlaceholderColor,
+    fillColor: kDarkPlaceholderColor,
     contentPadding: kContentPadding,
     hintStyle: TextStyle(
       fontSize: 14.sp,
@@ -60,11 +68,9 @@ final themeDataDark = ThemeData.dark().copyWith(
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      // side: BorderSide(color: borderColor),
-      // backgroundColor: orangeColor,
-      padding: EdgeInsets.symmetric(vertical: 17.h),
-      textStyle: TextStyle(
-        fontSize: 16.sp,
+      primary: kDarkPrimaryColor,
+      padding: kElevatedButtonPadding,
+      textStyle: const TextStyle(
         fontWeight: FontWeight.w600,
       ),
     ),
@@ -95,9 +101,9 @@ final themeDataDark = ThemeData.dark().copyWith(
   //     color: kDarkTextColor,
   //   ),
   // ),
-  progressIndicatorTheme: const ProgressIndicatorThemeData(
-    refreshBackgroundColor: kDarkPlaceholderColor,
-  ),
+  // progressIndicatorTheme: const ProgressIndicatorThemeData(
+  //   refreshBackgroundColor: kDarkPlaceholderColor,
+  // ),
   colorScheme: const ColorScheme.dark().copyWith(
     background: kDarkPlaceholderColor,
     surface: kDarkPlaceholderTextColor,

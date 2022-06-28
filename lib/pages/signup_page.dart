@@ -2,14 +2,14 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:nsdd/utils/file_path.dart';
 import 'package:nsdd/utils/routes.dart';
 
 import '../utils/constants.dart';
+import '../utils/file_path.dart';
 
-class LoginPage extends StatelessWidget {
-  LoginPage({Key? key}) : super(key: key);
-  final _globalKeyLoginForm = GlobalKey<FormState>();
+class SignupPage extends StatelessWidget {
+  SignupPage({Key? key}) : super(key: key);
+  final _globalKeySignupForm = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -30,13 +30,13 @@ class LoginPage extends StatelessWidget {
               padding: kPagePadding,
               child: SingleChildScrollView(
                 child: Form(
-                  key: _globalKeyLoginForm,
+                  key: _globalKeySignupForm,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Login',
+                        'Signup',
                         style: Theme.of(context).textTheme.headline2,
                       ),
                       kPageItemSpacing,
@@ -46,6 +46,33 @@ class LoginPage extends StatelessWidget {
                         decoration: const InputDecoration(
                           prefixIcon: Icon(Icons.pin),
                           hintText: 'Enter cnic no',
+                        ),
+                      ),
+                      kPageItemSpacing,
+                      TextFormField(
+                        keyboardType: TextInputType.name,
+                        textInputAction: TextInputAction.next,
+                        decoration: const InputDecoration(
+                          prefixIcon: Icon(Icons.person),
+                          hintText: 'Enter full name',
+                        ),
+                      ),
+                      kPageItemSpacing,
+                      TextFormField(
+                        keyboardType: TextInputType.name,
+                        textInputAction: TextInputAction.next,
+                        decoration: const InputDecoration(
+                          prefixIcon: Icon(Icons.person),
+                          hintText: 'Enter short name',
+                        ),
+                      ),
+                      kPageItemSpacing,
+                      TextFormField(
+                        keyboardType: TextInputType.number,
+                        textInputAction: TextInputAction.next,
+                        decoration: const InputDecoration(
+                          prefixIcon: Icon(Icons.phone),
+                          hintText: 'Enter mobile no',
                         ),
                       ),
                       kPageItemSpacing,
@@ -60,23 +87,14 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                       kPageItemSpacing,
-                      InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(
-                            context,
-                            RouteGenerator.forgetPassword,
-                          );
-                        },
-                        child: Align(
-                          alignment: Alignment.topRight,
-                          child: Text(
-                            'Forgot Password?',
-                            style:
-                                Theme.of(context).textTheme.headline6!.copyWith(
-                                      color: Theme.of(context).primaryColor,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                          ),
+                      TextFormField(
+                        keyboardType: TextInputType.text,
+                        textInputAction: TextInputAction.done,
+                        obscureText: true,
+                        decoration: const InputDecoration(
+                          prefixIcon: Icon(Icons.key),
+                          hintText: 'Re-enter Password',
+                          suffixIcon: Icon(Icons.visibility),
                         ),
                       ),
                       kPageItemSpacing2,
@@ -85,7 +103,7 @@ class LoginPage extends StatelessWidget {
                         child: ElevatedButton(
                           onPressed: () {},
                           child: Text(
-                            'Login',
+                            'Signup',
                             style: Theme.of(context).textTheme.button,
                           ),
                         ),
@@ -97,11 +115,11 @@ class LoginPage extends StatelessWidget {
                           text: TextSpan(
                             children: [
                               TextSpan(
-                                text: 'Don’t have an account? ',
+                                text: 'Already have an account? ',
                                 style: Theme.of(context).textTheme.headline6,
                               ),
                               TextSpan(
-                                text: 'Register',
+                                text: 'Login',
                                 style: Theme.of(context)
                                     .textTheme
                                     .headline6!
@@ -113,7 +131,7 @@ class LoginPage extends StatelessWidget {
                                   ..onTap = () {
                                     Navigator.restorablePushReplacementNamed(
                                       context,
-                                      RouteGenerator.signup,
+                                      RouteGenerator.login,
                                     );
                                   },
                               ),

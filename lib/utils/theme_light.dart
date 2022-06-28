@@ -38,14 +38,20 @@ final themeDataLight = ThemeData.light().copyWith(
         color: kLightTextColor,
       ),
       bodyText1: TextStyle(
-        fontSize: 12.sp,
-        color: kLightTextColor,
-      ),
-      bodyText2: TextStyle(
         fontSize: 14.sp,
         color: kLightTextColor,
       ),
-      button: TextStyle(),
+      bodyText2: TextStyle(
+        fontSize: 12.sp,
+        color: kLightTextColor,
+      ),
+      button: TextStyle(
+        fontSize: 17.sp,
+        fontWeight: FontWeight.bold,
+      ),
+      subtitle1: const TextStyle(
+        color: kLightPrimaryColor,
+      ),
     ),
   ),
   inputDecorationTheme: InputDecorationTheme(
@@ -58,6 +64,14 @@ final themeDataLight = ThemeData.light().copyWith(
     hintStyle: TextStyle(
       fontSize: 14.sp,
       fontWeight: FontWeight.w500,
+    ),
+  ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      padding: kElevatedButtonPadding,
+      textStyle: const TextStyle(
+        fontWeight: FontWeight.w600,
+      ),
     ),
   ),
   // appBarTheme: AppBarTheme(

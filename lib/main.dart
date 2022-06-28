@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nsdd/utils/theme_dark.dart';
+import 'package:nsdd/utils/theme_light.dart';
 import 'utils/routes.dart';
-import 'utils/theme.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,8 +20,8 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         // Theme config
         themeMode: ThemeMode.system,
-        theme: appThemeData[AppTheme.Light],
-        darkTheme: appThemeData[AppTheme.Dark],
+        theme: themeDataLight,
+        darkTheme: themeDataDark,
         // Routes config
         initialRoute: RouteGenerator.login,
         onGenerateRoute: RouteGenerator.generateRoute,

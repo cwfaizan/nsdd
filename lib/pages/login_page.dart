@@ -38,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     Text(
                       'Login',
-                      style: Theme.of(context).textTheme.headline1,
+                      style: Theme.of(context).textTheme.headline2,
                     ),
                     SizedBox(height: 15.h),
                     TextFormField(
@@ -76,10 +76,13 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(
                       height: 25.h,
                     ),
-                    TextButton(
+                    ElevatedButton(
                       onPressed: () {},
-                      child: Text('Login'),
+                      child: const Text(
+                        'Login',
+                      ),
                     ),
+                    
                     Container(
                       width: double.infinity,
                       padding: EdgeInsets.symmetric(vertical: 15.h),

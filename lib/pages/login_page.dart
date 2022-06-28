@@ -28,100 +28,104 @@ class LoginPage extends StatelessWidget {
           SafeArea(
             child: Padding(
               padding: kPagePadding,
-              child: SingleChildScrollView(
-                child: Form(
-                  key: _globalKeyLoginForm,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Login',
-                        style: Theme.of(context).textTheme.headline2,
-                      ),
-                      kPageItemSpacing,
-                      TextFormField(
-                        keyboardType: TextInputType.number,
-                        textInputAction: TextInputAction.next,
-                        decoration: const InputDecoration(
-                          prefixIcon: Icon(Icons.pin),
-                          hintText: 'Enter cnic no',
+              child: Center(
+                child: SingleChildScrollView(
+                  child: Form(
+                    key: _globalKeyLoginForm,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Login',
+                          style: Theme.of(context).textTheme.headline2,
                         ),
-                      ),
-                      kPageItemSpacing,
-                      TextFormField(
-                        keyboardType: TextInputType.text,
-                        textInputAction: TextInputAction.done,
-                        obscureText: true,
-                        decoration: const InputDecoration(
-                          prefixIcon: Icon(Icons.key),
-                          hintText: 'Enter Password',
-                          suffixIcon: Icon(Icons.visibility),
-                        ),
-                      ),
-                      kPageItemSpacing,
-                      InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(
-                            context,
-                            RouteGenerator.forgetPassword,
-                          );
-                        },
-                        child: Align(
-                          alignment: Alignment.topRight,
-                          child: Text(
-                            'Forgot Password?',
-                            style:
-                                Theme.of(context).textTheme.headline6!.copyWith(
-                                      color: Theme.of(context).primaryColor,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                        kPageItemSpacing,
+                        TextFormField(
+                          keyboardType: TextInputType.number,
+                          textInputAction: TextInputAction.next,
+                          decoration: const InputDecoration(
+                            prefixIcon: Icon(Icons.pin),
+                            hintText: 'Enter cnic no',
                           ),
                         ),
-                      ),
-                      kPageItemSpacing2,
-                      SizedBox(
-                        width: double.infinity,
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          child: Text(
-                            'Login',
-                            style: Theme.of(context).textTheme.button,
+                        kPageItemSpacing,
+                        TextFormField(
+                          keyboardType: TextInputType.text,
+                          textInputAction: TextInputAction.done,
+                          obscureText: true,
+                          decoration: const InputDecoration(
+                            prefixIcon: Icon(Icons.key),
+                            hintText: 'Enter Password',
+                            suffixIcon: Icon(Icons.visibility),
                           ),
                         ),
-                      ),
-                      kPageItemSpacing,
-                      Align(
-                        alignment: Alignment.center,
-                        child: RichText(
-                          text: TextSpan(
-                            children: [
-                              TextSpan(
-                                text: 'Don’t have an account? ',
-                                style: Theme.of(context).textTheme.headline6,
-                              ),
-                              TextSpan(
-                                text: 'Register',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline6!
-                                    .copyWith(
-                                      color: Theme.of(context).primaryColor,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                recognizer: TapGestureRecognizer()
-                                  ..onTap = () {
-                                    Navigator.restorablePushReplacementNamed(
-                                      context,
-                                      RouteGenerator.signup,
-                                    );
-                                  },
-                              ),
-                            ],
+                        kPageItemSpacing,
+                        InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(
+                              context,
+                              RouteGenerator.forgetPassword,
+                            );
+                          },
+                          child: Align(
+                            alignment: Alignment.topRight,
+                            child: Text(
+                              'Forgot Password?',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline6!
+                                  .copyWith(
+                                    color: Theme.of(context).primaryColor,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                        kPageItemSpacing2,
+                        SizedBox(
+                          width: double.infinity,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            child: Text(
+                              'Login',
+                              style: Theme.of(context).textTheme.button,
+                            ),
+                          ),
+                        ),
+                        kPageItemSpacing,
+                        Align(
+                          alignment: Alignment.center,
+                          child: RichText(
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: 'Don’t have an account? ',
+                                  style: Theme.of(context).textTheme.headline6,
+                                ),
+                                TextSpan(
+                                  text: 'Register',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headline6!
+                                      .copyWith(
+                                        color: Theme.of(context).primaryColor,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap = () {
+                                      Navigator.restorablePushReplacementNamed(
+                                        context,
+                                        RouteGenerator.signup,
+                                      );
+                                    },
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

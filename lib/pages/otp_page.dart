@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:nsdd/utils/constants.dart';
+import 'package:nsdd/utils/file_path.dart';
 import 'package:pinput/pinput.dart';
 
 class OtpPage extends StatelessWidget {
@@ -11,14 +13,14 @@ class OtpPage extends StatelessWidget {
     final defaultPinTheme = PinTheme(
       width: 60.w,
       height: 60.h,
-      textStyle: const TextStyle(
+      textStyle: TextStyle(
         fontSize: 24,
-        color: Color(0xFFEC7C03),
+        color: Theme.of(context).colorScheme.primary,
         fontWeight: FontWeight.bold,
       ),
       decoration: BoxDecoration(
         border: Border.all(
-          color: const Color(0xFFEC7C03),
+          color: Theme.of(context).colorScheme.primary,
           width: 3,
         ),
         borderRadius: BorderRadius.circular(10),
@@ -26,7 +28,10 @@ class OtpPage extends StatelessWidget {
     );
 
     final focusedPinTheme = defaultPinTheme.copyDecorationWith(
-      border: Border.all(color: const Color.fromRGBO(114, 178, 238, 1)),
+      border: Border.all(
+        color: Theme.of(context).colorScheme.secondary,
+        width: 3,
+      ),
       borderRadius: BorderRadius.circular(8),
     );
 
@@ -36,121 +41,96 @@ class OtpPage extends StatelessWidget {
       ),
     );
     return Scaffold(
-      body: Container(
-        color: Colors.white,
-        height: MediaQuery.of(context).size.height,
-        child: Stack(
-          children: [
-            SvgPicture.asset(
-              'assets/icons/art_two.svg',
-              width: MediaQuery.of(context).size.width,
+      body: Stack(
+        children: [
+          Positioned(
+            top: 0,
+            right: 0,
+            child: SvgPicture.asset(
+              FilePath.topRightCornerBg,
             ),
-            Positioned(
-              top: 120,
-              left: 0,
-              right: 0,
-              child: SvgPicture.asset(
-                'assets/icons/logo_dark.svg',
-                height: 55.h,
+          ),
+          Positioned(
+            top: 50,
+            left: 10,
+            child: InkWell(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: const Padding(
+                  padding: EdgeInsets.all(12),
+                  child: Icon(
+                    Icons.close,
+                    color: Colors.black,
+                    size: 30,
+                  )),
+            ),
+          ),
+          Positioned(
+            top: 200,
+            left: 0,
+            right: 0,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.transparent,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(25.r),
+                  topRight: Radius.circular(25.r),
+                ),
               ),
-            ),
-            Positioned(
-              top: 50,
-              left: 10,
-              child: InkWell(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: const Padding(
-                    padding: EdgeInsets.all(12),
-                    child: Icon(
-                      Icons.close,
-                      color: Colors.black,
-                      size: 30,
-                    )),
+              height: MediaQuery.of(context).size.height / 1.9,
+              width: double.infinity,
+              margin: EdgeInsets.symmetric(
+                vertical: 15.h,
               ),
-            ),
-            Positioned(
-              top: 200,
-              left: 0,
-              right: 0,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(25.r),
-                    topRight: Radius.circular(25.r),
-                  ),
-                ),
-                height: MediaQuery.of(context).size.height / 1.9,
-                width: double.infinity,
-                margin: EdgeInsets.symmetric(
-                  vertical: 15.h,
-                ),
-                padding: EdgeInsets.symmetric(
-                  vertical: 15.h,
-                  horizontal: 20.w,
-                ),
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'OTP',
-                        style: TextStyle(
-                          color: const Color(0xFF002448),
-                          fontSize: 24.sp,
-                          fontWeight: FontWeight.bold,
-                        ),
+              padding: EdgeInsets.symmetric(
+                vertical: 15.h,
+                horizontal: 20.w,
+              ),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Verify',
+                      style: Theme.of(context).textTheme.headline3,
+                    ),
+                    kPageItemSpacing,
+                    Text(
+                      'We sent code to 034*******1 to verify your account',
+                      style: Theme.of(context).textTheme.headline6!.copyWith(
+                            color: kGrayColor,
+                          ),
+                    ),
+                    kPageItemSpacing,
+                    Align(
+                      alignment: Alignment.center,
+                      child: Pinput(
+                        defaultPinTheme: defaultPinTheme,
+                        focusedPinTheme: focusedPinTheme,
+                        submittedPinTheme: submittedPinTheme,
+                        validator: (s) {
+                          return s == '1234' ? null : 'Pin is incorrect';
+                        },
+                        pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
+                        showCursor: true,
+                        onCompleted: (pin) => print(pin),
                       ),
-                      SizedBox(
-                        height: 20.h,
+                    ),
+                    kPageItemSpacing2,
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: const Text('Verify'),
                       ),
-                      Text(
-                        'Enter Otp',
-                        style: TextStyle(
-                          color: const Color(0xFF002448).withOpacity(0.8),
-                          fontSize: 12.sp,
-                        ),
-                      ),
-                      SizedBox(
-                        height: 20.h,
-                      ),
-                      Align(
-                        alignment: Alignment.center,
-                        child: Pinput(
-                          defaultPinTheme: defaultPinTheme,
-                          focusedPinTheme: focusedPinTheme,
-                          submittedPinTheme: submittedPinTheme,
-                          validator: (s) {
-                            return s == '1234' ? null : 'Pin is incorrect';
-                          },
-                          pinputAutovalidateMode:
-                              PinputAutovalidateMode.onSubmit,
-                          showCursor: true,
-                          onCompleted: (pin) => print(pin),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 18.h,
-                      ),
-                      Align(
-                        alignment: Alignment.center,
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          child: const Text('Verify'),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10.h,
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

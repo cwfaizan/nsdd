@@ -19,6 +19,7 @@ const Color kDarkErrorColor = Color(0xFFD0524A);
 
 const Color kBlackColor = Colors.black;
 const Color kWhiteColor = Colors.white;
+const Color kGrayColor = Color(0xFF8D989D);
 
 // Input textfield decoration
 final kOutlineInputBorder = OutlineInputBorder(
@@ -31,8 +32,8 @@ final kContentPadding = EdgeInsets.symmetric(vertical: 20.h);
 
 // Page Padding or Screen Padding
 final kPagePadding = EdgeInsets.symmetric(horizontal: 20.w);
-final kPageItemSpacing = SizedBox(height: 15.h);
-final kPageItemSpacing2 = SizedBox(height: 25.h);
+final kPageItemSpacing = SizedBox(height: 20.h);
+final kPageItemSpacing2 = SizedBox(height: 40.h);
 
 // Padding on ElevatedButton
 final kElevatedButtonPadding = EdgeInsets.symmetric(vertical: 18.h);

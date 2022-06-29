@@ -10,28 +10,28 @@ final themeDataDark = ThemeData.dark().copyWith(
   errorColor: kDarkErrorColor,
   textTheme: GoogleFonts.redHatDisplayTextTheme(
     const TextTheme().copyWith(
-      headline1: TextStyle(
-        fontSize: 48.sp,
-        color: kDarkTextColor,
-      ),
-      headline2: TextStyle(
-        fontSize: 32.sp,
-        fontWeight: FontWeight.bold,
-        color: kDarkTextColor,
-      ),
+      // headline1: TextStyle(
+      //   fontSize: 48.sp,
+      //   color: kDarkTextColor,
+      // ),
+      // headline2: TextStyle(
+      //   fontSize: 32.sp,
+      //   fontWeight: FontWeight.bold,
+      //   color: kDarkTextColor,
+      // ),
       headline3: TextStyle(
         fontSize: 24.sp,
-        color: kDarkTextColor,
         fontWeight: FontWeight.bold,
-      ),
-      headline4: TextStyle(
-        fontSize: 24.sp,
         color: kDarkTextColor,
       ),
-      headline5: TextStyle(
-        fontSize: 20.sp,
-        color: kDarkTextColor,
-      ),
+      // headline4: TextStyle(
+      //   fontSize: 24.sp,
+      //   color: kDarkTextColor,
+      // ),
+      // headline5: TextStyle(
+      //   fontSize: 20.sp,
+      //   color: kDarkTextColor,
+      // ),
       headline6: TextStyle(
         fontSize: 16.sp,
         color: kDarkTextColor,
@@ -40,10 +40,10 @@ final themeDataDark = ThemeData.dark().copyWith(
         fontSize: 14.sp,
         color: kDarkTextColor,
       ),
-      bodyText2: TextStyle(
-        fontSize: 12.sp,
-        color: kDarkTextColor,
-      ),
+      // bodyText2: TextStyle(
+      //   fontSize: 12.sp,
+      //   color: kDarkTextColor,
+      // ),
       button: TextStyle(
         fontSize: 17.sp,
         fontWeight: FontWeight.bold,

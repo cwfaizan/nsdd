@@ -38,7 +38,7 @@ class SignupPage extends StatelessWidget {
                       children: [
                         Text(
                           'Signup',
-                          style: Theme.of(context).textTheme.headline2,
+                          style: Theme.of(context).textTheme.headline3,
                         ),
                         kPageItemSpacing,
                         TextFormField(

@@ -38,7 +38,7 @@ class LoginPage extends StatelessWidget {
                       children: [
                         Text(
                           'Login',
-                          style: Theme.of(context).textTheme.headline2,
+                          style: Theme.of(context).textTheme.headline3,
                         ),
                         kPageItemSpacing,
                         TextFormField(

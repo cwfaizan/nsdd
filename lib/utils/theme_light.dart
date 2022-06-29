@@ -10,29 +10,29 @@ final themeDataLight = ThemeData.light().copyWith(
   errorColor: kLightErrorColor,
   textTheme: GoogleFonts.redHatDisplayTextTheme(
     const TextTheme().copyWith(
-      headline1: TextStyle(
-        fontSize: 48.sp,
-        fontWeight: FontWeight.bold,
-        color: kLightPrimaryColor,
-      ),
-      headline2: TextStyle(
-        fontSize: 32.sp,
-        fontWeight: FontWeight.bold,
-        color: kLightPrimaryColor,
-      ),
+      // headline1: TextStyle(
+      //   fontSize: 48.sp,
+      //   fontWeight: FontWeight.bold,
+      //   color: kLightPrimaryColor,
+      // ),
+      // headline2: TextStyle(
+      //   fontSize: 32.sp,
+      //   fontWeight: FontWeight.bold,
+      //   color: kLightPrimaryColor,
+      // ),
       headline3: TextStyle(
         fontSize: 24.sp,
-        color: kLightTextColor,
         fontWeight: FontWeight.bold,
+        color: kLightPrimaryColor,
       ),
-      headline4: TextStyle(
-        fontSize: 24.sp,
-        color: kLightTextColor,
-      ),
-      headline5: TextStyle(
-        fontSize: 20.sp,
-        color: kLightTextColor,
-      ),
+      // headline4: TextStyle(
+      //   fontSize: 24.sp,
+      //   color: kLightTextColor,
+      // ),
+      // headline5: TextStyle(
+      //   fontSize: 20.sp,
+      //   color: kLightTextColor,
+      // ),
       headline6: TextStyle(
         fontSize: 16.sp,
         color: kLightTextColor,
@@ -41,10 +41,10 @@ final themeDataLight = ThemeData.light().copyWith(
         fontSize: 14.sp,
         color: kLightTextColor,
       ),
-      bodyText2: TextStyle(
-        fontSize: 12.sp,
-        color: kLightTextColor,
-      ),
+      // bodyText2: TextStyle(
+      //   fontSize: 12.sp,
+      //   color: kLightTextColor,
+      // ),
       button: TextStyle(
         fontSize: 17.sp,
         fontWeight: FontWeight.bold,

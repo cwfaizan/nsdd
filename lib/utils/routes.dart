@@ -29,7 +29,7 @@ class RouteGenerator {
       case otp:
         return MaterialPageRoute(builder: (_) => const OtpPage());
       case home:
-        return MaterialPageRoute(builder: (_) => const HomePage());
+        return MaterialPageRoute(builder: (_) => HomePage());
       case changePassword:
         return MaterialPageRoute(builder: (_) => const ChangePasswordPage());
       default:

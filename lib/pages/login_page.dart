@@ -34,7 +34,7 @@ class LoginPage extends StatelessWidget {
                     key: _globalKeyLoginForm,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      // mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           'Login',

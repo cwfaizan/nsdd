@@ -91,9 +91,11 @@ class OtpPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Verify',
-                      style: Theme.of(context).textTheme.headline3,
+                    Center(
+                      child: Text(
+                        'Verify',
+                        style: Theme.of(context).textTheme.headline3,
+                      ),
                     ),
                     kPageItemSpacing,
                     Text(

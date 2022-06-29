@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      builder: (context, child) => MaterialApp( 
+      builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         // Theme config
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         theme: themeDataLight,
         darkTheme: themeDataDark,
         // Routes config
-        initialRoute: RouteGenerator.login,
+        initialRoute: RouteGenerator.home,
         onGenerateRoute: RouteGenerator.generateRoute,
       ),
       designSize: const Size(375, 812),

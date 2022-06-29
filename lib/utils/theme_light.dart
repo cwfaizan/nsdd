@@ -27,7 +27,8 @@ final themeDataLight = ThemeData.light().copyWith(
       ),
       // headline4: TextStyle(
       //   fontSize: 24.sp,
-      //   color: kLightTextColor,
+      //   fontWeight: FontWeight.bold,
+      //   color: kWhiteColor,
       // ),
       // headline5: TextStyle(
       //   fontSize: 20.sp,

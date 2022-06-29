@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      builder: (context, child) => MaterialApp(
+      builder: (context, child) => MaterialApp( 
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         // Theme config

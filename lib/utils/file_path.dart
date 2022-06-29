@@ -1,3 +1,9 @@
+import 'package:flutter/material.dart';
+
 class FilePath {
-  static const String topRightCornerBg = 'assets/svgs/top_right_corner_bg.svg';
+  static String topRightCornerBg(BuildContext context) {
+    return Theme.of(context).brightness == Brightness.light
+        ? 'assets/svgs/top_right_corner_light_bg.svg'
+        : 'assets/svgs/top_right_corner_dark_bg.svg';
+  }
 }

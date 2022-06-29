@@ -20,7 +20,7 @@ class SignupPage extends StatelessWidget {
             top: 0,
             right: 0,
             child: SvgPicture.asset(
-              FilePath.topRightCornerBg,
+              FilePath.topRightCornerBg(context),
               height: 152.h,
               width: 222.w,
             ),
@@ -34,7 +34,6 @@ class SignupPage extends StatelessWidget {
                     key: _globalKeySignupForm,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           'Signup',

@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
     ),
     Program(
       imageUrl:
-          'https://nutech.edu.pk/wp-content/uploads/2019/12/Picture1-1.png',
+          'https://upload.wikimedia.org/wikipedia/en/1/17/NUTECH_logo.png',
       title: 'NUtech',
     ),
   ];
@@ -59,7 +59,9 @@ class HomePage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Scaffold.of(context).openDrawer();
+                            },
                             icon: Icon(
                               Icons.menu,
                               size: 30.w,

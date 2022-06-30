@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
     ),
     Program(
       imageUrl:
-          'https://scontent.fisb16-1.fna.fbcdn.net/v/t1.18169-9/29541372_624658237874180_6757614764119362142_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=i1o55wV2pysAX-8ZJeN&_nc_ht=scontent.fisb16-1.fna&oh=00_AT_CqpqXZWPOV32UJ8Wakzoma4GSP6RgkRuOvNf6gEhSBA&oe=62E1934F',
+          'https://nutech.edu.pk/wp-content/uploads/2019/12/Picture1-1.png',
       title: 'NUtech',
     ),
   ];

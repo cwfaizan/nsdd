@@ -16,11 +16,17 @@ class ProgramCard extends StatelessWidget {
       margin: REdgeInsets.all(10),
       child: Stack(
         children: [
-          Image.network(
-            program.imageUrl,
-            fit: BoxFit.fill,
-            height: 192.h,
-            width: 192.w,
+          ClipRRect(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(15.r),
+              topRight: Radius.circular(15.r),
+            ),
+            child: Image.network(
+              program.imageUrl,
+              fit: BoxFit.fill,
+              height: 192.h,
+              width: 192.w,
+            ),
           ),
           Positioned(
             bottom: 0,

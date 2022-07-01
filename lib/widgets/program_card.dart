@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nsdd/models/program.dart';
 
+import '../utils/constants.dart';
+
 class ProgramCard extends StatelessWidget {
   final Program program;
   const ProgramCard({Key? key, required this.program}) : super(key: key);
@@ -10,16 +12,16 @@ class ProgramCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15.r),
+        borderRadius: BorderRadius.all(kRadiusCircular),
       ),
       elevation: 4,
-      margin: REdgeInsets.all(10),
+      margin: REdgeInsets.all(5),
       child: Stack(
         children: [
           ClipRRect(
             borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(15.r),
-              topRight: Radius.circular(15.r),
+              topLeft: kRadiusCircular,
+              topRight: kRadiusCircular,
             ),
             child: Image.network(
               program.imageUrl,
@@ -32,8 +34,8 @@ class ProgramCard extends StatelessWidget {
             bottom: 0,
             child: ClipRRect(
               borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(15.r),
-                bottomRight: Radius.circular(15.r),
+                bottomLeft: kRadiusCircular,
+                bottomRight: kRadiusCircular,
               ),
               child: Container(
                 color: Colors.black54,
@@ -56,7 +58,7 @@ class ProgramCard extends StatelessWidget {
             top: 10.w,
             left: 10.w,
             child: ClipRRect(
-              borderRadius: BorderRadius.all(Radius.circular(5.r)),
+              borderRadius: BorderRadius.all(kRadiusCircular),
               child: Container(
                 color: Theme.of(context).colorScheme.surface,
                 child: Center(

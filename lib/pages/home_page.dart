@@ -9,6 +9,7 @@ import '../utils/file_path.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   final programs = [
     Program(
@@ -26,98 +27,78 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.primary,
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.notifications),
+          )
+        ],
+      ),
+      key: _scaffoldKey,
       drawer: Drawer(
         child: ListView(
           children: [],
         ),
       ),
-      body: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          SizedBox(
-            width: ScreenUtil().screenWidth,
-            height: 219.h,
-            child: Stack(
-              children: [
-                Positioned(
-                  top: 0,
-                  child: SvgPicture.asset(
-                    FilePath.homeTopBg(context),
-                    width: ScreenUtil().screenWidth,
-                  ),
-                ),
-                Positioned(
-                  top: 40.h,
-                  child: SizedBox(
-                    width: ScreenUtil().screenWidth,
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        left: 5.w,
-                        right: 17.w,
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          IconButton(
-                            onPressed: () {
-                              Scaffold.of(context).openDrawer();
-                            },
-                            icon: Icon(
-                              Icons.menu,
-                              size: 30.w,
-                              color: kWhiteColor,
-                            ),
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Text(
-                                'Hi FAIZAN',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline3!
-                                    .copyWith(
-                                      color: kWhiteColor,
-                                    ),
-                              ),
-                              Text(
-                                'Welcome back',
-                                style: TextStyle(
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        padding: REdgeInsets.all(10.0),
+        decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.background,
+          borderRadius: BorderRadius.only(
+            topLeft: kRadiusCircular,
+            topRight: kRadiusCircular,
           ),
-          Text(
-            'Programs',
-            style: Theme.of(context).textTheme.headline3,
-          ),
-          kPageItemSpacing,
-          SizedBox(
-            height: 223.h,
-            child: ListView.builder(
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              itemCount: 2,
-              itemBuilder: (context, index) => ProgramCard(
-                program: programs[index],
+        ),
+        child: Column(
+          children: [
+            Align(
+              alignment: Alignment.topLeft,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Hi FAIZAN',
+                    style: Theme.of(context).textTheme.headline3,
+                  ),
+                  Text(
+                    'Welcome back',
+                    style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400,
+                        ),
+                  ),
+                ],
               ),
             ),
-          ),
-          Text(
-            'Courses',
-            style: Theme.of(context).textTheme.headline3,
-          ),
-        ],
+            kPageItemSpacing,
+            Text(
+              'Programs',
+              style: Theme.of(context).textTheme.headline3,
+            ),
+            kPageItemSpacing,
+            SizedBox(
+              height: 223.h,
+              child: ListView.builder(
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                itemCount: programs.length,
+                itemBuilder: (context, index) => ProgramCard(
+                  program: programs[index],
+                ),
+              ),
+            ),
+            kPageItemSpacing,
+            Text(
+              'Courses',
+              style: Theme.of(context).textTheme.headline3,
+            ),
+            kPageItemSpacing,
+          ],
+        ),
       ),
     );
   }

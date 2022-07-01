@@ -38,6 +38,9 @@ final kPageItemSpacing2 = SizedBox(height: 40.h);
 // Padding on ElevatedButton
 final kElevatedButtonPadding = EdgeInsets.symmetric(vertical: 18.h);
 
+// Radius Circular
+final kRadiusCircular = Radius.circular(15.r);
+
 // const Duration kAnimationDuration = Duration(milliseconds: 300);
 // const Curve kAnimationCurve = Curves.easeInOut;
 

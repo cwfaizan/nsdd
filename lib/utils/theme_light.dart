@@ -75,15 +75,16 @@ final themeDataLight = ThemeData.light().copyWith(
       ),
     ),
   ),
-  // appBarTheme: AppBarTheme(
-  //   systemOverlayStyle: SystemUiOverlayStyle.dark,
-  //   backgroundColor: kLightPrimaryColor,
-  //   titleTextStyle: TextStyle(
-  //     fontSize: 16.sp,
-  //     fontWeight: FontWeight.bold,
-  //     color: kDarkTextColor,
-  //   ),
-  // ),
+  appBarTheme: const AppBarTheme(
+    // systemOverlayStyle: SystemUiOverlayStyle.light,
+    // backgroundColor: kLightPrimaryColor,
+    elevation: 0,
+    // titleTextStyle: TextStyle(
+    //   fontSize: 14.sp,
+    //   fontWeight: FontWeight.bold,
+    //   color: kDarkTextColor,
+    // ),
+  ),
   // bottomNavigationBarTheme: BottomNavigationBarThemeData(
   //   backgroundColor: kLightBackgroundColor,
   //   selectedItemColor: kLightPrimaryColor,

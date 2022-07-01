@@ -20,28 +20,18 @@ class ProgramCard extends StatelessWidget {
       margin: REdgeInsets.all(5),
       child: Stack(
         children: [
-          Image.network(
-            program.imageUrl,
-            fit: BoxFit.fill,
-            height: 192.h,
-            width: 192.w,
-          ),
-          Positioned(
-            bottom: 0,
-            child: Container(
-              color: Colors.black54,
-              width: 192.w,
-              child: Center(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 9.h),
-                  child: Text(
-                    program.title,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
+          Padding(
+            padding: REdgeInsets.only(
+              top: 18.h,
+              left: 13.w,
+              right: 13.w,
+              bottom: 39.h,
+            ),
+            child: Image.network(
+              program.imageUrl,
+              fit: BoxFit.contain,
+              height: 166.h,
+              width: 166.w,
             ),
           ),
           Positioned(
@@ -60,6 +50,24 @@ class ProgramCard extends StatelessWidget {
                         color: Theme.of(context).colorScheme.primary,
                         fontWeight: FontWeight.bold,
                       ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: 0,
+            child: Container(
+              color: Colors.black54,
+              width: 192.w,
+              child: Center(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 9.h),
+                  child: Text(
+                    program.title,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),

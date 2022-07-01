@@ -55,9 +55,9 @@ final themeDataDark = ThemeData.dark().copyWith(
     ),
   ),
   inputDecorationTheme: InputDecorationTheme(
-    border: kOutlineInputBorder,
-    enabledBorder: kOutlineInputBorder,
-    focusedBorder: kOutlineInputBorder,
+    border: kOutlineInputBorderShape,
+    enabledBorder: kOutlineInputBorderShape,
+    focusedBorder: kOutlineInputBorderShape,
     filled: true,
     fillColor: kDarkPlaceholderColor,
     contentPadding: kContentPadding,

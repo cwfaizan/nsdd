@@ -21,11 +21,36 @@ const Color kBlackColor = Colors.black;
 const Color kWhiteColor = Colors.white;
 const Color kGrayColor = Color(0xFF8D989D);
 
-// Input textfield decoration
-final kOutlineInputBorder = OutlineInputBorder(
-  borderRadius: BorderRadius.circular(10.r),
-  borderSide: const BorderSide(color: Colors.transparent, width: 0),
+// Radius Circular
+final kRadiusCircular = Radius.circular(10.r);
+final kBorderRadiusCircular = BorderRadius.circular(10.r);
+final kBorderRadiusAll = BorderRadius.all(kRadiusCircular);
+final kBorderRadiusTop = BorderRadius.only(
+  topLeft: kRadiusCircular,
+  topRight: kRadiusCircular,
 );
+final kBorderRadiusBottom = BorderRadius.only(
+  bottomLeft: kRadiusCircular,
+  bottomRight: kRadiusCircular,
+);
+const kBorderSide = BorderSide(color: Colors.transparent, width: 0);
+
+// border shape
+// Input textfield decoration
+final kOutlineInputBorderShape = OutlineInputBorder(
+  borderRadius: kBorderRadiusCircular,
+  borderSide: kBorderSide,
+);
+// border shape 2
+// Card
+final kRoundedRectangleBorderShape = RoundedRectangleBorder(
+  borderRadius: kBorderRadiusAll,
+  side: kBorderSide,
+);
+// border shape 3
+const kCircleBorderShape = CircleBorder(side: kBorderSide);
+// border shape 4
+const kStadiumBorderShape = StadiumBorder(side: kBorderSide);
 
 // Padding on Input textfield
 final kContentPadding = EdgeInsets.symmetric(vertical: 20.h);
@@ -37,9 +62,6 @@ final kPageItemSpacing2 = SizedBox(height: 40.h);
 
 // Padding on ElevatedButton
 final kElevatedButtonPadding = EdgeInsets.symmetric(vertical: 18.h);
-
-// Radius Circular
-final kRadiusCircular = Radius.circular(15.r);
 
 // const Duration kAnimationDuration = Duration(milliseconds: 300);
 // const Curve kAnimationCurve = Curves.easeInOut;

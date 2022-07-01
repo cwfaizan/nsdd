@@ -11,43 +11,33 @@ class ProgramCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(kRadiusCircular),
-      ),
+      // semanticContainer: true,
+      clipBehavior: Clip.hardEdge,
+      shape: kRoundedRectangleBorderShape,
+      // borderOnForeground: true,
       elevation: 4,
+      // shadowColor:Colors.green,
       margin: REdgeInsets.all(5),
       child: Stack(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.only(
-              topLeft: kRadiusCircular,
-              topRight: kRadiusCircular,
-            ),
-            child: Image.network(
-              program.imageUrl,
-              fit: BoxFit.fill,
-              height: 192.h,
-              width: 192.w,
-            ),
+          Image.network(
+            program.imageUrl,
+            fit: BoxFit.fill,
+            height: 192.h,
+            width: 192.w,
           ),
           Positioned(
             bottom: 0,
-            child: ClipRRect(
-              borderRadius: BorderRadius.only(
-                bottomLeft: kRadiusCircular,
-                bottomRight: kRadiusCircular,
-              ),
-              child: Container(
-                color: Colors.black54,
-                width: 192.w,
-                child: Center(
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 9.h),
-                    child: Text(
-                      program.title,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
+            child: Container(
+              color: Colors.black54,
+              width: 192.w,
+              child: Center(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 9.h),
+                  child: Text(
+                    program.title,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
@@ -58,7 +48,7 @@ class ProgramCard extends StatelessWidget {
             top: 10.w,
             left: 10.w,
             child: ClipRRect(
-              borderRadius: BorderRadius.all(kRadiusCircular),
+              borderRadius: kBorderRadiusAll,
               child: Container(
                 color: Theme.of(context).colorScheme.surface,
                 child: Center(

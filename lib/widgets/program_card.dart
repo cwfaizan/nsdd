@@ -21,12 +21,7 @@ class ProgramCard extends StatelessWidget {
       child: Stack(
         children: [
           Padding(
-            padding: REdgeInsets.only(
-              top: 18.h,
-              left: 13.w,
-              right: 13.w,
-              bottom: 39.h,
-            ),
+            padding: REdgeInsets.all(13.0),
             child: Image.network(
               program.imageUrl,
               fit: BoxFit.contain,

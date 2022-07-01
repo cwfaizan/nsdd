@@ -80,8 +80,7 @@ class HomePage extends StatelessWidget {
               style: Theme.of(context).textTheme.headline3,
             ),
             kPageItemSpacing,
-            SizedBox(
-              height: 223.h,
+            Expanded(
               child: ListView.builder(
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
@@ -97,6 +96,16 @@ class HomePage extends StatelessWidget {
               style: Theme.of(context).textTheme.headline3,
             ),
             kPageItemSpacing,
+            Expanded(
+              child: ListView.builder(
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                itemCount: programs.length,
+                itemBuilder: (context, index) => ProgramCard(
+                  program: programs[index],
+                ),
+              ),
+            ),
           ],
         ),
       ),

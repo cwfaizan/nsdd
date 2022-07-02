@@ -34,7 +34,6 @@ class LoginPage extends StatelessWidget {
                     key: _globalKeyLoginForm,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      // mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           'Login',
@@ -62,12 +61,10 @@ class LoginPage extends StatelessWidget {
                         ),
                         kPageItemSpacing,
                         InkWell(
-                          onTap: () {
-                            Navigator.pushNamed(
-                              context,
-                              RouteGenerator.forgetPassword,
-                            );
-                          },
+                          onTap: () => Navigator.pushNamed(
+                            context,
+                            RouteGenerator.forgetPassword,
+                          ),
                           child: Align(
                             alignment: Alignment.topRight,
                             child: Text(
@@ -86,7 +83,10 @@ class LoginPage extends StatelessWidget {
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () => Navigator.pushNamed(
+                              context,
+                              RouteGenerator.home,
+                            ),
                             child: Text(
                               'Login',
                               style: Theme.of(context).textTheme.button,
@@ -113,12 +113,11 @@ class LoginPage extends StatelessWidget {
                                         fontWeight: FontWeight.bold,
                                       ),
                                   recognizer: TapGestureRecognizer()
-                                    ..onTap = () {
-                                      Navigator.restorablePushReplacementNamed(
-                                        context,
-                                        RouteGenerator.signup,
-                                      );
-                                    },
+                                    ..onTap = () => Navigator
+                                            .restorablePushReplacementNamed(
+                                          context,
+                                          RouteGenerator.signup,
+                                        ),
                                 ),
                               ],
                             ),

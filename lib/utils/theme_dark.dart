@@ -24,6 +24,7 @@ final themeDataDark = ThemeData.dark().copyWith(
         fontWeight: FontWeight.bold,
         color: kDarkTextColor,
       ),
+
       // headline4: TextStyle(
       //   fontSize: 24.sp,
       //   color: kDarkTextColor,
@@ -53,6 +54,10 @@ final themeDataDark = ThemeData.dark().copyWith(
         color: kDarkTextColor,
       ),
     ),
+  ),
+  iconTheme: IconThemeData(
+    color: kLightPrimaryColor,
+    size: 30.w,
   ),
   inputDecorationTheme: InputDecorationTheme(
     border: kOutlineInputBorderShape,

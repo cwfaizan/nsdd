@@ -55,6 +55,10 @@ final themeDataLight = ThemeData.light().copyWith(
       ),
     ),
   ),
+  iconTheme: IconThemeData(
+    color: kLightPrimaryColor,
+    size: 30.w,
+  ),
   inputDecorationTheme: InputDecorationTheme(
     border: kOutlineInputBorderShape,
     enabledBorder: kOutlineInputBorderShape,

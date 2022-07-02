@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nsdd/models/program.dart';
 import 'package:nsdd/utils/constants.dart';
+import 'package:nsdd/widgets/app_drawer.dart';
 import 'package:nsdd/widgets/program_card.dart';
 
 import '../utils/file_path.dart';
@@ -27,87 +28,116 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primary,
-      appBar: AppBar(
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.notifications),
-          )
-        ],
-      ),
       key: _scaffoldKey,
-      drawer: Drawer(
-        child: ListView(
-          children: [],
-        ),
-      ),
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        padding: REdgeInsets.all(10.0),
-        decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.background,
-          borderRadius: BorderRadius.only(
-            topLeft: kRadiusCircular,
-            topRight: kRadiusCircular,
+      drawer: const AppDrawer(),
+      body: Column(
+        children: [
+          SizedBox(
+            height: 200.h,
+            child: Stack(
+              children: [
+                Positioned(
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  child: SvgPicture.asset(
+                    FilePath.homeTopBg(context),
+                    fit: BoxFit.fill,
+                  ),
+                ),
+                Positioned(
+                  top: 30.h,
+                  left: 12.w,
+                  right: 12.w,
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          IconButton(
+                            onPressed: () =>
+                                _scaffoldKey.currentState!.openDrawer(),
+                            icon: Icon(
+                              Icons.menu,
+                              size: 30.w,
+                              color: kWhiteColor,
+                            ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Text(
+                                'Hi FAIZAN',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline3!
+                                    .copyWith(color: kWhiteColor),
+                              ),
+                              Text(
+                                'Welcome back',
+                                style: TextStyle(
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w400,
+                                  color: kWhiteColor,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 6.h),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Offered Programs'),
+                          Text('02'),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Offered Courses'),
+                          Text('15'),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
-        ),
-        child: Column(
-          children: [
-            Align(
-              alignment: Alignment.topLeft,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Hi FAIZAN',
-                    style: Theme.of(context).textTheme.headline3,
-                  ),
-                  Text(
-                    'Welcome back',
-                    style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w400,
-                        ),
-                  ),
-                ],
+          Text(
+            'Programs',
+            style: Theme.of(context).textTheme.headline3,
+          ),
+          kPageItemSpacing,
+          Expanded(
+            child: ListView.builder(
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemCount: programs.length,
+              itemBuilder: (context, index) => ProgramCard(
+                program: programs[index],
               ),
             ),
-            kPageItemSpacing,
-            Text(
-              'Programs',
-              style: Theme.of(context).textTheme.headline3,
-            ),
-            kPageItemSpacing,
-            Expanded(
-              child: ListView.builder(
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemCount: programs.length,
-                itemBuilder: (context, index) => ProgramCard(
-                  program: programs[index],
-                ),
+          ),
+          kPageItemSpacing,
+          Text(
+            'Courses',
+            style: Theme.of(context).textTheme.headline3,
+          ),
+          kPageItemSpacing,
+          Expanded(
+            child: ListView.builder(
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemCount: programs.length,
+              itemBuilder: (context, index) => ProgramCard(
+                program: programs[index],
               ),
             ),
-            kPageItemSpacing,
-            Text(
-              'Courses',
-              style: Theme.of(context).textTheme.headline3,
-            ),
-            kPageItemSpacing,
-            Expanded(
-              child: ListView.builder(
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemCount: programs.length,
-                itemBuilder: (context, index) => ProgramCard(
-                  program: programs[index],
-                ),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

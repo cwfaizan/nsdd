@@ -20,20 +20,17 @@ class ProgramCard extends StatelessWidget {
       margin: REdgeInsets.all(5),
       child: Stack(
         children: [
-          Padding(
-            padding: REdgeInsets.all(13.0),
-            child: Image.network(
-              program.imageUrl,
-              fit: BoxFit.contain,
-              height: 166.h,
-              width: 166.w,
-            ),
+          Image.network(
+            program.imageUrl,
+            fit: BoxFit.fill,
+            height: 166.h,
+            width: 166.w,
           ),
           Positioned(
             top: 10.w,
             left: 10.w,
             child: ClipRRect(
-              borderRadius: kBorderRadiusAll,
+              borderRadius: kBorderRadiusAllHalf,
               child: Container(
                 color: Theme.of(context).colorScheme.surface,
                 child: Center(
@@ -53,9 +50,10 @@ class ProgramCard extends StatelessWidget {
           ),
           Positioned(
             bottom: 0,
+            left: 0,
+            right: 0,
             child: Container(
               color: Colors.black54,
-              width: 192.w,
               child: Center(
                 child: Padding(
                   padding: EdgeInsets.symmetric(vertical: 9.h),
@@ -63,6 +61,7 @@ class ProgramCard extends StatelessWidget {
                     program.title,
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
+                      color: kWhiteColor,
                     ),
                   ),
                 ),

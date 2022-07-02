@@ -26,12 +26,12 @@ final themeDataLight = ThemeData.light().copyWith(
         color: kLightPrimaryColor,
       ),
       // headline4: TextStyle(
-      //   fontSize: 24.sp,
+      //   fontSize: 20.sp,
       //   fontWeight: FontWeight.bold,
       //   color: kWhiteColor,
       // ),
       // headline5: TextStyle(
-      //   fontSize: 20.sp,
+      //   fontSize: 18.sp,
       //   color: kLightTextColor,
       // ),
       headline6: TextStyle(
@@ -42,10 +42,10 @@ final themeDataLight = ThemeData.light().copyWith(
         fontSize: 14.sp,
         color: kLightTextColor,
       ),
-      // bodyText2: TextStyle(
-      //   fontSize: 12.sp,
-      //   color: kLightTextColor,
-      // ),
+      bodyText2: TextStyle(
+        fontSize: 12.sp,
+        color: kLightTextColor,
+      ),
       button: TextStyle(
         fontSize: 17.sp,
         fontWeight: FontWeight.bold,

@@ -23,8 +23,10 @@ const Color kGrayColor = Color(0xFF8D989D);
 
 // Radius Circular
 final kRadiusCircular = Radius.circular(10.r);
+final kRadiusCircularHalf = Radius.circular(5.r);
 final kBorderRadiusCircular = BorderRadius.circular(10.r);
 final kBorderRadiusAll = BorderRadius.all(kRadiusCircular);
+final kBorderRadiusAllHalf = BorderRadius.all(kRadiusCircularHalf);
 final kBorderRadiusTop = BorderRadius.only(
   topLeft: kRadiusCircular,
   topRight: kRadiusCircular,
@@ -62,6 +64,11 @@ final kPageItemSpacing2 = SizedBox(height: 40.h);
 
 // Padding on ElevatedButton
 final kElevatedButtonPadding = EdgeInsets.symmetric(vertical: 18.h);
+
+const kTextStyleWhiteBold = TextStyle(
+  fontWeight: FontWeight.bold,
+  color: kWhiteColor,
+);
 
 // const Duration kAnimationDuration = Duration(milliseconds: 300);
 // const Curve kAnimationCurve = Curves.easeInOut;

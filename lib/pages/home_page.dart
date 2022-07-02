@@ -4,26 +4,15 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nsdd/models/program.dart';
 import 'package:nsdd/utils/constants.dart';
 import 'package:nsdd/widgets/app_drawer.dart';
+import 'package:nsdd/widgets/course_card.dart';
 import 'package:nsdd/widgets/program_card.dart';
 
 import '../utils/file_path.dart';
+import '../widgets/dummy_data.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-
-  final programs = [
-    Program(
-      imageUrl:
-          'https://upload.wikimedia.org/wikipedia/commons/3/3c/Kj-logo.png',
-      title: 'Kamyab Jawan Program',
-    ),
-    Program(
-      imageUrl:
-          'https://upload.wikimedia.org/wikipedia/en/1/17/NUTECH_logo.png',
-      title: 'NUtech',
-    ),
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -88,16 +77,38 @@ class HomePage extends StatelessWidget {
                       SizedBox(height: 6.h),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('Offered Programs'),
-                          Text('02'),
+                        children: const [
+                          Text(
+                            'Offered Programs',
+                            style: TextStyle(
+                              color: kWhiteColor,
+                            ),
+                          ),
+                          Text(
+                            '02',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: kWhiteColor,
+                            ),
+                          ),
                         ],
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('Offered Courses'),
-                          Text('15'),
+                        children: const [
+                          Text(
+                            'Offered Courses',
+                            style: TextStyle(
+                              color: kWhiteColor,
+                            ),
+                          ),
+                          Text(
+                            '15',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: kWhiteColor,
+                            ),
+                          ),
                         ],
                       ),
                     ],
@@ -129,11 +140,10 @@ class HomePage extends StatelessWidget {
           kPageItemSpacing,
           Expanded(
             child: ListView.builder(
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              itemCount: programs.length,
-              itemBuilder: (context, index) => ProgramCard(
-                program: programs[index],
+              padding: EdgeInsets.zero,
+              itemCount: courses.length,
+              itemBuilder: (context, index) => CourseCard(
+                course: courses[index],
               ),
             ),
           ),

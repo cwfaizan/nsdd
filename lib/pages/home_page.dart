@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:nsdd/models/program.dart';
 import 'package:nsdd/utils/constants.dart';
 import 'package:nsdd/widgets/app_drawer.dart';
 import 'package:nsdd/widgets/course_card.dart';
 import 'package:nsdd/widgets/program_card.dart';
 
 import '../utils/file_path.dart';
-import '../widgets/dummy_data.dart';
+import '../providers/dummy_data.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);

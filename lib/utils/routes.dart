@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:nsdd/pages/change_password_page.dart';
+import 'package:nsdd/pages/edit_qualification_page.dart';
 import 'package:nsdd/pages/forget_password_page.dart';
 import 'package:nsdd/pages/home_page.dart';
 import 'package:nsdd/pages/login_page.dart';
 import 'package:nsdd/pages/otp_page.dart';
 import 'package:nsdd/pages/profile_page.dart';
+import 'package:nsdd/pages/qualification_page.dart';
 import 'package:nsdd/pages/signup_page.dart';
 
 import '../errors/exceptions.dart';
@@ -20,6 +22,8 @@ class RouteGenerator {
   static const String changePassword = 'changePassword';
   static const String editProfile = 'editProfile';
   static const String profile = 'profile';
+  static const String qualification = 'qualification';
+  static const String editQualification = 'editQualification';
 
   RouteGenerator._();
 
@@ -41,6 +45,10 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => EditProfilePage());
       case profile:
         return MaterialPageRoute(builder: (_) => const ProfilePage());
+      case qualification:
+        return MaterialPageRoute(builder: (_) => const QualificationPage());
+      case editQualification:
+        return MaterialPageRoute(builder: (_) => EditQualificationPage());
       default:
         throw RouteException('Route not found');
     }

@@ -4,66 +4,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nsdd/models/city.dart';
 import 'package:nsdd/models/country.dart';
 
+import '../providers/dummy_data.dart';
 import '../utils/constants.dart';
 import '../utils/file_path.dart';
 
 class EditProfilePage extends StatelessWidget {
   EditProfilePage({Key? key}) : super(key: key);
   final _globalKeyProfileForm = GlobalKey<FormState>();
-  List<DropdownMenuItem<String>> get genderDropdownItems {
-    return [
-      const DropdownMenuItem(value: 'Male', child: Text('Male')),
-      const DropdownMenuItem(value: 'Female', child: Text('Female')),
-      const DropdownMenuItem(value: 'Other', child: Text('Other')),
-    ];
-  }
-
-  List<DropdownMenuItem<String>> get fatherOccupationDropdownItems {
-    return [
-      const DropdownMenuItem(
-        value: 'Govt Servant/Retired',
-        child: Text('Govt Servant/Retired'),
-      ),
-      const DropdownMenuItem(
-        value: 'Pak Army Servant/Retired',
-        child: Text('Pak Army Servant/Retired'),
-      ),
-      const DropdownMenuItem(
-        value: 'Pak Air Force Servant/Retired',
-        child: Text('Pak Air Force Servant/Retired'),
-      ),
-      const DropdownMenuItem(
-        value: 'Pak Navy Servant/Retired',
-        child: Text('Pak Navy Servant/Retired'),
-      ),
-      const DropdownMenuItem(
-        value: 'Businessman',
-        child: Text('Businessman'),
-      ),
-      const DropdownMenuItem(
-        value: 'Other',
-        child: Text('Other'),
-      ),
-    ];
-  }
-
-  List<DropdownMenuItem<Country>> get countryDropdownItems {
-    return [
-      DropdownMenuItem(
-        value: Country(id: 1, code: '+92', name: 'Pakistan'),
-        child: const Text('Pakistan'),
-      ),
-    ];
-  }
-
-  List<DropdownMenuItem<City>> get cityDropdownItems {
-    return [
-      DropdownMenuItem(
-        value: City(id: 1, name: 'Islamabad'),
-        child: const Text('Islamabad'),
-      ),
-    ];
-  }
 
   @override
   Widget build(BuildContext context) {

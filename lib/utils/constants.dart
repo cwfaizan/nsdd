@@ -3,15 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 const Color kLightPrimaryColor = Color(0xFF8B010B);
 const Color kLightAccentColor = Color(0xFFc50110);
-const Color kLightTextColor = Colors.black;
+const Color kLightTextColor = Color(0xff1F1A3D);
 const Color kLightPlaceholderColor = Color(0xFFE8EAF0);
-const Color kLightPlaceholderTextColor = Color(0xFFC6CAD3);
+const Color kLightPlaceholderTextColor = Color(0xFFC6CAD3); //Color(0xffF5F6FA);
 const Color kLightBackgroundColor = Color(0xFFD9D9D9);
 const Color kLightErrorColor = Color(0xFFFF7971);
 
 const Color kDarkPrimaryColor = Color(0xFFD9D9D9);
 const Color kDarkAccentColor = Color(0xFFc50110);
-const Color kDarkTextColor = Color(0xFFD9D9D9);
+const Color kDarkTextColor = Color(0xFFD9D9D9); //Color(0xff999999);
 const Color kDarkPlaceholderColor = Color(0xFF7681a4);
 const Color kDarkPlaceholderTextColor = Color(0xFF525C7C);
 const Color kDarkBackgroundColor = Color(0xFF2D3251);

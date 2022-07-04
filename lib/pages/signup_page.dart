@@ -78,7 +78,7 @@ class SignupPage extends StatelessWidget {
                         kPageItemSpacing,
                         TextFormField(
                           keyboardType: TextInputType.text,
-                          textInputAction: TextInputAction.done,
+                          textInputAction: TextInputAction.next,
                           obscureText: true,
                           decoration: const InputDecoration(
                             prefixIcon: Icon(Icons.key),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../utils/routes.dart';
+
 class AppDrawer extends StatelessWidget {
   const AppDrawer({Key? key}) : super(key: key);
 
@@ -21,7 +23,10 @@ class AppDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.account_circle),
             title: const Text('Profile'),
-            onTap: () {},
+            onTap: () => Navigator.restorablePushReplacementNamed(
+              context,
+              RouteGenerator.profile,
+            ),
           ),
           const Divider(),
           ListTile(

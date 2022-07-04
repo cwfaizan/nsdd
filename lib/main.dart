@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nsdd/providers/date_provider.dart';
 import 'package:nsdd/utils/theme_dark.dart';
 import 'package:nsdd/utils/theme_light.dart';
+import 'package:provider/provider.dart';
+import 'providers/password_provider.dart';
 import 'utils/routes.dart';
 
 void main() {
@@ -15,16 +18,26 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      builder: (context, child) => MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        // Theme config
-        themeMode: ThemeMode.system,
-        theme: themeDataLight,
-        darkTheme: themeDataDark,
-        // Routes config
-        initialRoute: RouteGenerator.home,
-        onGenerateRoute: RouteGenerator.generateRoute,
+      builder: (context, child) => MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+            create: (_) => PasswordProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (_) => DateProvider(),
+          ),
+        ],
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter Demo',
+          // Theme config
+          themeMode: ThemeMode.system,
+          theme: themeDataLight,
+          darkTheme: themeDataDark,
+          // Routes config
+          initialRoute: RouteGenerator.editProfile,
+          onGenerateRoute: RouteGenerator.generateRoute,
+        ),
       ),
       designSize: const Size(375, 812),
     );

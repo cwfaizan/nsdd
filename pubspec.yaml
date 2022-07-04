@@ -45,6 +45,7 @@ dependencies:
   logger: ^1.1.0
   shared_preferences: ^2.0.15
   pinput: ^2.2.11
+  provider: ^6.0.3
 
 dev_dependencies:
   flutter_test:

@@ -61,6 +61,7 @@ final kContentPadding = EdgeInsets.symmetric(vertical: 20.h);
 final kPagePadding = EdgeInsets.symmetric(horizontal: 20.w);
 final kPageItemSpacing = SizedBox(height: 20.h);
 final kPageItemSpacing2 = SizedBox(height: 40.h);
+final kPageItemSpacingTop = SizedBox(height: 60.h);
 
 // Padding on ElevatedButton
 final kElevatedButtonPadding = EdgeInsets.symmetric(vertical: 18.h);

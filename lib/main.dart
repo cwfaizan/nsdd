@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
           theme: themeDataLight,
           darkTheme: themeDataDark,
           // Routes config
-          initialRoute: RouteGenerator.forgotPassword,
+          initialRoute: RouteGenerator.editProfile,
           onGenerateRoute: RouteGenerator.generateRoute,
         ),
       ),

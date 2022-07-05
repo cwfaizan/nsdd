@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nsdd/pages/alumni_page.dart';
 import 'package:nsdd/pages/change_password_page.dart';
 import 'package:nsdd/pages/edit_qualification_page.dart';
 import 'package:nsdd/pages/forgot_password_page.dart';
@@ -24,6 +25,7 @@ class RouteGenerator {
   static const String profile = 'profile';
   static const String qualification = 'qualification';
   static const String editQualification = 'editQualification';
+  static const String alumni = 'alumni';
 
   RouteGenerator._();
 
@@ -49,6 +51,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const QualificationPage());
       case editQualification:
         return MaterialPageRoute(builder: (_) => EditQualificationPage());
+      case alumni:
+        return MaterialPageRoute(builder: (_) => AlumniPage());
       default:
         throw RouteException('Route not found');
     }

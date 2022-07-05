@@ -36,6 +36,7 @@ class EditProfilePage extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        kPageItemSpacingTop,
                         Text(
                           'Profile',
                           style: Theme.of(context).textTheme.headline3,

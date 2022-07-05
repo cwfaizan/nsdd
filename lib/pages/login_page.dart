@@ -63,7 +63,7 @@ class LoginPage extends StatelessWidget {
                         InkWell(
                           onTap: () => Navigator.pushNamed(
                             context,
-                            RouteGenerator.forgetPassword,
+                            RouteGenerator.forgotPassword,
                           ),
                           child: Align(
                             alignment: Alignment.topRight,

@@ -6,9 +6,9 @@ import 'package:nsdd/utils/routes.dart';
 import '../utils/constants.dart';
 import '../utils/file_path.dart';
 
-class ForgetPasswordPage extends StatelessWidget {
-  ForgetPasswordPage({Key? key}) : super(key: key);
-  final _globalKeyForgetPasswordForm = GlobalKey<FormState>();
+class ForgotPasswordPage extends StatelessWidget {
+  ForgotPasswordPage({Key? key}) : super(key: key);
+  final _globalKeyForgotPasswordForm = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -30,13 +30,13 @@ class ForgetPasswordPage extends StatelessWidget {
               child: Center(
                 child: SingleChildScrollView(
                   child: Form(
-                    key: _globalKeyForgetPasswordForm,
+                    key: _globalKeyForgotPasswordForm,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Forget Password',
+                          'Forgot Password',
                           style: Theme.of(context).textTheme.headline3,
                         ),
                         kPageItemSpacing,

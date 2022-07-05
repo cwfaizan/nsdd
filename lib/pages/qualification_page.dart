@@ -43,11 +43,12 @@ class QualificationPage extends StatelessWidget {
         children: [
           Positioned(
             bottom: 0,
+            left: 0,
             right: 0,
             child: SvgPicture.asset(
               FilePath.bottomRightCornerBg(context),
               height: 188.h,
-              width: 371.w,
+              fit: BoxFit.fill,
             ),
           ),
           qualifications.isEmpty

@@ -2,8 +2,10 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nsdd/providers/password_provider.dart';
 import 'package:nsdd/utils/file_path.dart';
 import 'package:nsdd/utils/routes.dart';
+import 'package:provider/provider.dart';
 
 import '../utils/constants.dart';
 
@@ -13,6 +15,8 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final passwordProvider =
+        Provider.of<PasswordProvider>(context, listen: false);
     return Scaffold(
       body: Stack(
         children: [
@@ -49,14 +53,22 @@ class LoginPage extends StatelessWidget {
                           ),
                         ),
                         kPageItemSpacing,
-                        TextFormField(
-                          keyboardType: TextInputType.text,
-                          textInputAction: TextInputAction.done,
-                          obscureText: true,
-                          decoration: const InputDecoration(
-                            prefixIcon: Icon(Icons.key),
-                            hintText: 'Enter Password',
-                            suffixIcon: Icon(Icons.visibility),
+                        Consumer<PasswordProvider>(
+                          builder: (context, pp, child) => TextFormField(
+                            keyboardType: TextInputType.text,
+                            textInputAction: TextInputAction.done,
+                            obscureText: pp.isObscure,
+                            decoration: InputDecoration(
+                              prefixIcon: const Icon(Icons.key),
+                              hintText: 'Enter Password',
+                              suffixIcon: IconButton(
+                                icon: Icon(pp.isObscure
+                                    ? Icons.visibility
+                                    : Icons.visibility_off),
+                                onPressed: () =>
+                                    passwordProvider.toggleIsObscure(),
+                              ),
+                            ),
                           ),
                         ),
                         kPageItemSpacing,

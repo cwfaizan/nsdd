@@ -52,7 +52,7 @@ class RouteGenerator {
       case editQualification:
         return MaterialPageRoute(builder: (_) => EditQualificationPage());
       case alumni:
-        return MaterialPageRoute(builder: (_) => AlumniPage());
+        return MaterialPageRoute(builder: (_) => const AlumniPage());
       default:
         throw RouteException('Route not found');
     }

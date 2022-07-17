@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:nsdd/models/course.dart';
+import 'package:nsdd/models/qualification.dart';
 import 'package:nsdd/models/qualification_level.dart';
 import 'package:nsdd/models/university.dart';
 
 import '../models/city.dart';
 import '../models/country.dart';
 import '../models/program.dart';
+import '../models/province.dart';
 
 // home page
 final programs = [
@@ -24,7 +26,7 @@ final programs = [
 final courses = [
   Course(
     title: 'Mobile App Development',
-    imageUrl: 'https://therightsw.com/wp-content/uploads/2022/05/creative8.png',
+    imageUrl: 'http://via.placeholder.com/120x120',
     charges: 0,
     chargesUnit: 'NA',
     duration: 6,
@@ -90,9 +92,16 @@ final countryDropdownItems = [
   ),
 ];
 
+final provinceDropdownItems = [
+  DropdownMenuItem(
+    value: Province(id: 1, name: 'Islamabad', countryId: 1),
+    child: const Text('Islamabad'),
+  ),
+];
+
 final cityDropdownItems = [
   DropdownMenuItem(
-    value: City(id: 1, name: 'Islamabad'),
+    value: City(id: 1, name: 'Islamabad', provinceId: 1),
     child: const Text('Islamabad'),
   ),
 ];
@@ -107,9 +116,34 @@ final qualificationLevelDropdownItems = [
 
 final universityDropdownItems = [
   DropdownMenuItem(
-    value: University(id: 1, name: 'NUTECH'),
+    value: University(id: 1, name: 'NUTECH, ISB'),
     child: const Text('NUTECH'),
   ),
 ];
 
-final qualifications = [];
+final List<Qualification> qualifications = [
+  Qualification(
+    qualificationLevel: '18-years',
+    degreeTitle: 'MC CS',
+    obtainedMarks: 3.5,
+    totalMarks: 4.0,
+    passingYear: DateTime.now(),
+    university: University(id: 1, name: 'NUTECH, ISB'),
+  ),
+  Qualification(
+    qualificationLevel: '16-years',
+    degreeTitle: 'BS CS',
+    obtainedMarks: 3.6,
+    totalMarks: 4.0,
+    passingYear: DateTime.now(),
+    university: University(id: 1, name: 'NUTECH, ISB'),
+  ),
+  Qualification(
+    qualificationLevel: '12-years',
+    degreeTitle: 'ICS',
+    obtainedMarks: 750,
+    totalMarks: 1100,
+    passingYear: DateTime.now(),
+    university: University(id: 1, name: 'NUTECH, ISB'),
+  ),
+];

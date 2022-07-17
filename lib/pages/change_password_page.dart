@@ -48,7 +48,7 @@ class ChangePasswordPage extends StatelessWidget {
                           'Change Password',
                           style: Theme.of(context).textTheme.headline3,
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.text,
                           textInputAction: TextInputAction.next,
@@ -59,7 +59,7 @@ class ChangePasswordPage extends StatelessWidget {
                             suffixIcon: Icon(Icons.visibility),
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.text,
                           textInputAction: TextInputAction.next,
@@ -70,7 +70,7 @@ class ChangePasswordPage extends StatelessWidget {
                             suffixIcon: Icon(Icons.visibility),
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.text,
                           textInputAction: TextInputAction.done,
@@ -81,7 +81,7 @@ class ChangePasswordPage extends StatelessWidget {
                             suffixIcon: Icon(Icons.visibility),
                           ),
                         ),
-                        kPageItemSpacing2,
+                        kPageItemSpacing4,
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
@@ -92,7 +92,7 @@ class ChangePasswordPage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                       ],
                     ),
                   ),

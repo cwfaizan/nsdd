@@ -43,7 +43,7 @@ class SignupPage extends StatelessWidget {
                           'Signup',
                           style: Theme.of(context).textTheme.headline3,
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.number,
                           textInputAction: TextInputAction.next,
@@ -52,7 +52,7 @@ class SignupPage extends StatelessWidget {
                             hintText: 'Enter cnic no',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.name,
                           textInputAction: TextInputAction.next,
@@ -61,7 +61,7 @@ class SignupPage extends StatelessWidget {
                             hintText: 'Enter full name',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.name,
                           textInputAction: TextInputAction.next,
@@ -70,7 +70,7 @@ class SignupPage extends StatelessWidget {
                             hintText: 'Enter short name',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.number,
                           textInputAction: TextInputAction.next,
@@ -79,7 +79,7 @@ class SignupPage extends StatelessWidget {
                             hintText: 'Enter mobile no',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         Consumer<PasswordProvider>(
                           builder: (context, pp, child) => TextFormField(
                             keyboardType: TextInputType.text,
@@ -98,7 +98,7 @@ class SignupPage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         Consumer<PasswordProvider>(
                           builder: (context, pp, child) => TextFormField(
                             keyboardType: TextInputType.text,
@@ -117,7 +117,7 @@ class SignupPage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        kPageItemSpacing2,
+                        kPageItemSpacing4,
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
@@ -128,7 +128,7 @@ class SignupPage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         Align(
                           alignment: Alignment.center,
                           child: RichText(

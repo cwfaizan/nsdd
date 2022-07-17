@@ -43,7 +43,7 @@ class LoginPage extends StatelessWidget {
                           'Login',
                           style: Theme.of(context).textTheme.headline3,
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.number,
                           textInputAction: TextInputAction.next,
@@ -52,7 +52,7 @@ class LoginPage extends StatelessWidget {
                             hintText: 'Enter cnic no',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         Consumer<PasswordProvider>(
                           builder: (context, pp, child) => TextFormField(
                             keyboardType: TextInputType.text,
@@ -71,7 +71,7 @@ class LoginPage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         InkWell(
                           onTap: () => Navigator.pushNamed(
                             context,
@@ -91,7 +91,7 @@ class LoginPage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        kPageItemSpacing2,
+                        kPageItemSpacing4,
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
@@ -105,7 +105,7 @@ class LoginPage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         Align(
                           alignment: Alignment.center,
                           child: RichText(

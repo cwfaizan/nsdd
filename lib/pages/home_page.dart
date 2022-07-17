@@ -120,7 +120,7 @@ class HomePage extends StatelessWidget {
             'Programs',
             style: Theme.of(context).textTheme.headline3,
           ),
-          kPageItemSpacing,
+          kPageItemSpacing2,
           Expanded(
             child: ListView.builder(
               shrinkWrap: true,
@@ -131,12 +131,12 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
-          kPageItemSpacing,
+          kPageItemSpacing2,
           Text(
             'Courses',
             style: Theme.of(context).textTheme.headline3,
           ),
-          kPageItemSpacing,
+          kPageItemSpacing2,
           Expanded(
             child: ListView.builder(
               padding: EdgeInsets.zero,

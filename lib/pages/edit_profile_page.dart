@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nsdd/models/city.dart';
 import 'package:nsdd/models/country.dart';
+import 'package:nsdd/models/province.dart';
 
 import '../providers/dummy_data.dart';
 import '../utils/constants.dart';
@@ -36,12 +37,12 @@ class EditProfilePage extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        kPageItemSpacingTop,
+                        kPageItemSpacing6,
                         Text(
                           'Profile',
                           style: Theme.of(context).textTheme.headline3,
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           readOnly: true,
                           decoration: const InputDecoration(
@@ -49,7 +50,7 @@ class EditProfilePage extends StatelessWidget {
                             hintText: '34102-1234567-3',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.name,
                           textInputAction: TextInputAction.next,
@@ -58,7 +59,7 @@ class EditProfilePage extends StatelessWidget {
                             hintText: 'Enter full name',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.name,
                           textInputAction: TextInputAction.next,
@@ -67,7 +68,7 @@ class EditProfilePage extends StatelessWidget {
                             hintText: 'Enter short name',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.emailAddress,
                           textInputAction: TextInputAction.next,
@@ -76,7 +77,7 @@ class EditProfilePage extends StatelessWidget {
                             hintText: 'Enter email address',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           readOnly: true,
                           decoration: const InputDecoration(
@@ -84,7 +85,7 @@ class EditProfilePage extends StatelessWidget {
                             hintText: '0321-1234567',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.phone,
                           textInputAction: TextInputAction.next,
@@ -93,7 +94,7 @@ class EditProfilePage extends StatelessWidget {
                             hintText: 'Other contact no',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         DropdownButtonFormField<String>(
                           items: genderDropdownItems,
                           onChanged: (String? value) {},
@@ -105,7 +106,7 @@ class EditProfilePage extends StatelessWidget {
                             hintText: 'Choose gender',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           readOnly: true,
                           keyboardType: TextInputType.none,
@@ -117,7 +118,7 @@ class EditProfilePage extends StatelessWidget {
                           ),
                           onTap: () {},
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.name,
                           textInputAction: TextInputAction.next,
@@ -126,7 +127,7 @@ class EditProfilePage extends StatelessWidget {
                             hintText: 'Enter father/guardian name',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.phone,
                           textInputAction: TextInputAction.next,
@@ -135,7 +136,7 @@ class EditProfilePage extends StatelessWidget {
                             hintText: 'Father/guardian contact no',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         DropdownButtonFormField<String>(
                           items: fatherOccupationDropdownItems,
                           onChanged: (String? value) {},
@@ -148,7 +149,7 @@ class EditProfilePage extends StatelessWidget {
                             hintText: 'Choose father/guardian occupation',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.text,
                           textInputAction: TextInputAction.next,
@@ -157,7 +158,7 @@ class EditProfilePage extends StatelessWidget {
                             hintText: 'Enter postal address',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.text,
                           textInputAction: TextInputAction.next,
@@ -166,7 +167,19 @@ class EditProfilePage extends StatelessWidget {
                             hintText: 'Enter permanent address',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
+                        DropdownButtonFormField<Province>(
+                          items: provinceDropdownItems,
+                          onChanged: (Province? value) {},
+                          // value: selectedGender,
+                          validator: (value) =>
+                              value == null ? 'Choose domicile province' : null,
+                          decoration: const InputDecoration(
+                            prefixIcon: Icon(Icons.location_city),
+                            hintText: 'Choose domicile province',
+                          ),
+                        ),
+                        kPageItemSpacing2,
                         DropdownButtonFormField<City>(
                           items: cityDropdownItems,
                           onChanged: (City? value) {},
@@ -178,11 +191,11 @@ class EditProfilePage extends StatelessWidget {
                             hintText: 'Choose domicile district',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         CheckboxListTile(
                           value: true,
                           onChanged: (bool? checked) {},
-                          title: Text(
+                          title: const Text(
                             'Minority',
                           ),
                           secondary:
@@ -191,11 +204,11 @@ class EditProfilePage extends StatelessWidget {
                           shape: kOutlineInputBorderShape,
                           activeColor: Theme.of(context).colorScheme.primary,
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         CheckboxListTile(
                           value: false,
                           onChanged: (bool? checked) {},
-                          title: Text(
+                          title: const Text(
                             'Disablity',
                           ),
                           secondary: const Icon(Icons.wheelchair_pickup),
@@ -203,7 +216,7 @@ class EditProfilePage extends StatelessWidget {
                           shape: kOutlineInputBorderShape,
                           activeColor: Theme.of(context).colorScheme.primary,
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         DropdownButtonFormField<Country>(
                           items: countryDropdownItems,
                           onChanged: (Country? value) {},
@@ -215,7 +228,7 @@ class EditProfilePage extends StatelessWidget {
                             hintText: 'Choose other nationality',
                           ),
                         ),
-                        kPageItemSpacing2,
+                        kPageItemSpacing4,
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
@@ -226,7 +239,7 @@ class EditProfilePage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                       ],
                     ),
                   ),

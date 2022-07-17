@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../utils/routes.dart';
 
@@ -15,7 +17,17 @@ class AppDrawer extends StatelessWidget {
             child: Column(
               children: [
                 CircleAvatar(
-                  child: Icon(Icons.person),
+                  radius: 50.r,
+                  child: ClipOval(
+                    child: CachedNetworkImage(
+                      imageUrl: "http://via.placeholder.com/150x150",
+                      fit: BoxFit.fill,
+                      placeholder: (context, url) =>
+                          const CircularProgressIndicator(),
+                      errorWidget: (context, url, error) =>
+                          const Icon(Icons.error),
+                    ),
+                  ),
                 ),
               ],
             ),

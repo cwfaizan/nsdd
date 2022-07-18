@@ -1,6 +1,6 @@
 class Country {
   final int id;
-  final String code;
+  final int code;
   final String name;
 
   Country({

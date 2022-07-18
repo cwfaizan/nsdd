@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nsdd/providers/country_provider.dart';
 import 'package:nsdd/providers/date_provider.dart';
 import 'package:nsdd/utils/theme_dark.dart';
 import 'package:nsdd/utils/theme_light.dart';
@@ -25,6 +26,9 @@ class MyApp extends StatelessWidget {
           ),
           ChangeNotifierProvider(
             create: (_) => DateProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (_) => CountryProvider(),
           ),
         ],
         child: MaterialApp(

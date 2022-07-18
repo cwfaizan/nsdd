@@ -211,7 +211,9 @@ class EditProfilePage extends StatelessWidget {
                           builder: (context, cp, child) =>
                               DropdownButtonFormField<Country>(
                             items: cp.countries,
-                            onChanged: (Country? value) {},
+                            onChanged: (Country? value) {
+                              print(value?.name);
+                            },
                             // value: selectedGender,
                             validator: (value) => value == null
                                 ? 'Choose other nationality'

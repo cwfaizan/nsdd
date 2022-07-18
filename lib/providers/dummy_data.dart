@@ -83,13 +83,6 @@ final fatherOccupationDropdownItems = [
   ),
 ];
 
-final countryDropdownItems = [
-  DropdownMenuItem(
-    value: Country(id: 1, code: '+92', name: 'Pakistan'),
-    child: const Text('Pakistan'),
-  ),
-];
-
 final cityDropdownItems = [
   DropdownMenuItem(
     value: City(id: 1, name: 'Islamabad'),

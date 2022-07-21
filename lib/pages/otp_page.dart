@@ -52,8 +52,7 @@ class OtpPage extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 50.h,
-            left: 10.w,
+            top: 30.h,
             child: InkWell(
               onTap: () {
                 Navigator.pop(context);
@@ -61,7 +60,7 @@ class OtpPage extends StatelessWidget {
               child: Padding(
                 padding: REdgeInsets.all(12.w),
                 child: Icon(
-                  Icons.close,
+                  Icons.arrow_back,
                   color: Theme.of(context).primaryColor,
                   size: 30.w,
                 ),
@@ -89,6 +88,8 @@ class OtpPage extends StatelessWidget {
                       ),
                       kPageItemSpacing2,
                       Pinput(
+                        androidSmsAutofillMethod:
+                            AndroidSmsAutofillMethod.smsRetrieverApi,
                         defaultPinTheme: defaultPinTheme,
                         focusedPinTheme: focusedPinTheme,
                         submittedPinTheme: submittedPinTheme,

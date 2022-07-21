@@ -4,6 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nsdd/models/city.dart';
 import 'package:nsdd/models/country.dart';
 import 'package:nsdd/models/province.dart';
+import 'package:nsdd/providers/country_provider.dart';
+import 'package:provider/provider.dart';
 
 import '../providers/dummy_data.dart';
 import '../utils/constants.dart';
@@ -15,6 +17,7 @@ class EditProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Provider.of<CountryProvider>(context, listen: false).getCountriesFromAPI();
     return Scaffold(
       body: Stack(
         children: [
@@ -217,15 +220,19 @@ class EditProfilePage extends StatelessWidget {
                           activeColor: Theme.of(context).colorScheme.primary,
                         ),
                         kPageItemSpacing2,
-                        DropdownButtonFormField<Country>(
-                          items: countryDropdownItems,
-                          onChanged: (Country? value) {},
-                          // value: selectedGender,
-                          validator: (value) =>
-                              value == null ? 'Choose other nationality' : null,
-                          decoration: const InputDecoration(
-                            prefixIcon: Icon(Icons.add_location_alt),
-                            hintText: 'Choose other nationality',
+                        Consumer<CountryProvider>(
+                          builder: (context, cp, child) =>
+                              DropdownButtonFormField<Country>(
+                            items: cp.countries,
+                            onChanged: (Country? value) {},
+                            // value: selectedGender,
+                            validator: (value) => value == null
+                                ? 'Choose other nationality'
+                                : null,
+                            decoration: const InputDecoration(
+                              prefixIcon: Icon(Icons.add_location_alt),
+                              hintText: 'Choose other nationality',
+                            ),
                           ),
                         ),
                         kPageItemSpacing4,

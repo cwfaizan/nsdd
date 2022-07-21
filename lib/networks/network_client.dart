@@ -14,12 +14,13 @@ class NetworkClient {
     _dio = Dio(baseOptions);
     // adding logging interceptor.
     _dio.interceptors.add(LogInterceptor(
-        requestBody: true,
-        error: true,
-        request: true,
-        requestHeader: true,
-        responseBody: false,
-        responseHeader: false));
+      requestBody: false,
+      error: true,
+      request: true,
+      requestHeader: true,
+      responseBody: false,
+      responseHeader: true,
+    ));
   }
 
   // for HTTP.GET Request.

@@ -8,12 +8,6 @@ class ApiService {
   ApiService({required this.networkClient});
 
   Future<Response> getCountriesFromAPI() {
-    return networkClient.get('/api/countries', {});
+    return networkClient.get('countries');
   }
-
-  // Future<Response> getPrayerTiming(
-  //     int timeStamp, Map<String, Object> params) async {
-  //   return await networkClient.get('/$timeStamp', params);
-  // }
-
 }

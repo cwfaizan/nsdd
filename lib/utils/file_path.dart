@@ -18,4 +18,10 @@ class FilePath {
         ? 'assets/svgs/home_top_light_bg.svg'
         : 'assets/svgs/home_top_dark_bg.svg';
   }
+
+  static String profileTopBg(BuildContext context) {
+    return Theme.of(context).brightness == Brightness.light
+        ? 'assets/svgs/profile_top_light_bg.svg'
+        : 'assets/svgs/profile_top_light_bg.svg';
+  }
 }

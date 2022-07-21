@@ -39,7 +39,7 @@ class ForgotPasswordPage extends StatelessWidget {
                           'Forgot Password',
                           style: Theme.of(context).textTheme.headline3,
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.number,
                           textInputAction: TextInputAction.next,
@@ -48,7 +48,7 @@ class ForgotPasswordPage extends StatelessWidget {
                             hintText: 'Enter mobile no',
                           ),
                         ),
-                        kPageItemSpacing2,
+                        kPageItemSpacing4,
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(

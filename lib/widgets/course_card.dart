@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nsdd/models/course.dart';
@@ -20,8 +21,10 @@ class CourseCard extends StatelessWidget {
       margin: REdgeInsets.all(5),
       child: Row(
         children: [
-          Image.network(
-            course.imageUrl,
+          CachedNetworkImage(
+            imageUrl: course.imageUrl,
+            placeholder: (context, url) => const CircularProgressIndicator(),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
             height: 120.h,
             width: 120.w,
             fit: BoxFit.fill,

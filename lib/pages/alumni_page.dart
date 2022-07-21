@@ -8,7 +8,7 @@ import '../utils/constants.dart';
 import '../utils/file_path.dart';
 
 class AlumniPage extends StatefulWidget {
-  AlumniPage({Key? key}) : super(key: key);
+  const AlumniPage({Key? key}) : super(key: key);
 
   @override
   State<AlumniPage> createState() => _AlumniPageState();
@@ -41,12 +41,12 @@ class _AlumniPageState extends State<AlumniPage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        kPageItemSpacingTop,
+                        kPageItemSpacing6,
                         Text(
                           'Alumni Portal',
                           style: Theme.of(context).textTheme.headline3,
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         DropdownButtonFormField<University>(
                           items: universityDropdownItems,
                           onChanged: (University? value) {},
@@ -58,7 +58,7 @@ class _AlumniPageState extends State<AlumniPage> {
                             hintText: 'Choose Employment Status',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         DropdownButtonFormField<University>(
                           items: universityDropdownItems,
                           onChanged: (University? value) {},
@@ -70,7 +70,7 @@ class _AlumniPageState extends State<AlumniPage> {
                             hintText: 'Choose Employment Type',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.name,
                           textInputAction: TextInputAction.next,
@@ -79,7 +79,7 @@ class _AlumniPageState extends State<AlumniPage> {
                             hintText: 'Your Designation',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         DropdownButtonFormField<University>(
                           items: universityDropdownItems,
                           onChanged: (University? value) {},
@@ -92,11 +92,11 @@ class _AlumniPageState extends State<AlumniPage> {
                             hintText: 'Choose District Where Employed',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         CheckboxListTile(
                           value: false,
                           onChanged: (bool? checked) {},
-                          title: Text(
+                          title: const Text(
                             'Employment Relavant To Course',
                           ),
                           secondary: const Icon(Icons.wheelchair_pickup),
@@ -104,7 +104,7 @@ class _AlumniPageState extends State<AlumniPage> {
                           shape: kOutlineInputBorderShape,
                           activeColor: Theme.of(context).colorScheme.primary,
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.number,
                           textInputAction: TextInputAction.next,
@@ -113,11 +113,11 @@ class _AlumniPageState extends State<AlumniPage> {
                             hintText: 'Your Monthly Income',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         CheckboxListTile(
                           value: false,
                           onChanged: (bool? checked) {},
-                          title: Text(
+                          title: const Text(
                             'Contribution to Household',
                           ),
                           secondary: const Icon(Icons.wheelchair_pickup),
@@ -125,12 +125,12 @@ class _AlumniPageState extends State<AlumniPage> {
                           shape: kOutlineInputBorderShape,
                           activeColor: Theme.of(context).colorScheme.primary,
                         ),
-                        kPageItemSpacing2,
+                        kPageItemSpacing4,
                         Text(
                           'Employer Detail',
                           style: Theme.of(context).textTheme.headline3,
                         ),
-                        kPageItemSpacing2,
+                        kPageItemSpacing4,
                         TextFormField(
                           keyboardType: TextInputType.text,
                           textInputAction: TextInputAction.next,
@@ -140,7 +140,7 @@ class _AlumniPageState extends State<AlumniPage> {
                             suffixIcon: Icon(Icons.visibility),
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.number,
                           textInputAction: TextInputAction.next,
@@ -149,7 +149,7 @@ class _AlumniPageState extends State<AlumniPage> {
                             hintText: 'Enter contact no',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.emailAddress,
                           textInputAction: TextInputAction.next,
@@ -158,7 +158,7 @@ class _AlumniPageState extends State<AlumniPage> {
                             hintText: 'Enter email address',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         DropdownButtonFormField<University>(
                           items: universityDropdownItems,
                           onChanged: (University? value) {},
@@ -171,7 +171,7 @@ class _AlumniPageState extends State<AlumniPage> {
                             hintText: 'Choose Employer Satisfaction',
                           ),
                         ),
-                        kPageItemSpacing2,
+                        kPageItemSpacing4,
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
@@ -182,7 +182,7 @@ class _AlumniPageState extends State<AlumniPage> {
                             ),
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                       ],
                     ),
                   ),

@@ -40,7 +40,7 @@ class EditQualificationPage extends StatelessWidget {
                           'Qualification',
                           style: Theme.of(context).textTheme.headline3,
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         DropdownButtonFormField<QualificationLevel>(
                           items: qualificationLevelDropdownItems,
                           onChanged: (QualificationLevel? value) {},
@@ -53,7 +53,7 @@ class EditQualificationPage extends StatelessWidget {
                             hintText: 'Choose Qualification Level',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.name,
                           textInputAction: TextInputAction.next,
@@ -62,7 +62,7 @@ class EditQualificationPage extends StatelessWidget {
                             hintText: 'Enter degree title',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.number,
                           textInputAction: TextInputAction.next,
@@ -71,7 +71,7 @@ class EditQualificationPage extends StatelessWidget {
                             hintText: 'Enter obtained marks/cgpa',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.number,
                           textInputAction: TextInputAction.next,
@@ -80,7 +80,7 @@ class EditQualificationPage extends StatelessWidget {
                             hintText: 'Enter total marks/cgpa',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           readOnly: true,
                           keyboardType: TextInputType.none,
@@ -92,7 +92,7 @@ class EditQualificationPage extends StatelessWidget {
                           ),
                           onTap: () {},
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         DropdownButtonFormField<University>(
                           items: universityDropdownItems,
                           onChanged: (University? value) {},
@@ -104,7 +104,7 @@ class EditQualificationPage extends StatelessWidget {
                             hintText: 'Choose Board/University',
                           ),
                         ),
-                        kPageItemSpacing2,
+                        kPageItemSpacing4,
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
@@ -115,7 +115,7 @@ class EditQualificationPage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                       ],
                     ),
                   ),

@@ -56,7 +56,7 @@ final themeDataDark = ThemeData.dark().copyWith(
     ),
   ),
   iconTheme: IconThemeData(
-    color: kLightPrimaryColor,
+    color: kDarkPrimaryColor,
     size: 30.w,
   ),
   inputDecorationTheme: InputDecorationTheme(
@@ -65,7 +65,7 @@ final themeDataDark = ThemeData.dark().copyWith(
     focusedBorder: kOutlineInputBorderShape,
     filled: true,
     fillColor: kDarkPlaceholderColor,
-    contentPadding: kContentPadding,
+    contentPadding: kContentPaddingVertical,
     hintStyle: TextStyle(
       fontSize: 14.sp,
       fontWeight: FontWeight.w500,

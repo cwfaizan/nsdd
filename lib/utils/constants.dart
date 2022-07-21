@@ -55,13 +55,21 @@ const kCircleBorderShape = CircleBorder(side: kBorderSide);
 const kStadiumBorderShape = StadiumBorder(side: kBorderSide);
 
 // Padding on Input textfield
-final kContentPadding = EdgeInsets.symmetric(vertical: 20.h);
+final kContentPaddingVertical = EdgeInsets.symmetric(vertical: 20.h);
+
+// Padding on Card View
+final kContentPadding = REdgeInsets.all(10.0);
+const kTextStyleBold = TextStyle(
+  fontWeight: FontWeight.bold,
+);
 
 // Page Padding or Screen Padding
 final kPagePadding = EdgeInsets.symmetric(horizontal: 20.w);
-final kPageItemSpacing = SizedBox(height: 20.h);
-final kPageItemSpacing2 = SizedBox(height: 40.h);
-final kPageItemSpacingTop = SizedBox(height: 60.h);
+final kPageItemSpacing = SizedBox(height: 5.h);
+final kPageItemSpacing1 = SizedBox(height: 10.h);
+final kPageItemSpacing2 = SizedBox(height: 20.h);
+final kPageItemSpacing4 = SizedBox(height: 40.h);
+final kPageItemSpacing6 = SizedBox(height: 60.h);
 
 // Padding on ElevatedButton
 final kElevatedButtonPadding = EdgeInsets.symmetric(vertical: 18.h);

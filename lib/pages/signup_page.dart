@@ -2,7 +2,9 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nsdd/providers/password_provider.dart';
 import 'package:nsdd/utils/routes.dart';
+import 'package:provider/provider.dart';
 
 import '../utils/constants.dart';
 import '../utils/file_path.dart';
@@ -13,6 +15,8 @@ class SignupPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final passwordProvider =
+        Provider.of<PasswordProvider>(context, listen: false);
     return Scaffold(
       body: Stack(
         children: [
@@ -39,7 +43,7 @@ class SignupPage extends StatelessWidget {
                           'Signup',
                           style: Theme.of(context).textTheme.headline3,
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.number,
                           textInputAction: TextInputAction.next,
@@ -48,7 +52,7 @@ class SignupPage extends StatelessWidget {
                             hintText: 'Enter cnic no',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.name,
                           textInputAction: TextInputAction.next,
@@ -57,7 +61,7 @@ class SignupPage extends StatelessWidget {
                             hintText: 'Enter full name',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.name,
                           textInputAction: TextInputAction.next,
@@ -66,7 +70,7 @@ class SignupPage extends StatelessWidget {
                             hintText: 'Enter short name',
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         TextFormField(
                           keyboardType: TextInputType.number,
                           textInputAction: TextInputAction.next,
@@ -75,29 +79,45 @@ class SignupPage extends StatelessWidget {
                             hintText: 'Enter mobile no',
                           ),
                         ),
-                        kPageItemSpacing,
-                        TextFormField(
-                          keyboardType: TextInputType.text,
-                          textInputAction: TextInputAction.next,
-                          obscureText: true,
-                          decoration: const InputDecoration(
-                            prefixIcon: Icon(Icons.key),
-                            hintText: 'Enter Password',
-                            suffixIcon: Icon(Icons.visibility),
-                          ),
-                        ),
-                        kPageItemSpacing,
-                        TextFormField(
-                          keyboardType: TextInputType.text,
-                          textInputAction: TextInputAction.done,
-                          obscureText: true,
-                          decoration: const InputDecoration(
-                            prefixIcon: Icon(Icons.key),
-                            hintText: 'Re-enter Password',
-                            suffixIcon: Icon(Icons.visibility),
+                        kPageItemSpacing2,
+                        Consumer<PasswordProvider>(
+                          builder: (context, pp, child) => TextFormField(
+                            keyboardType: TextInputType.text,
+                            textInputAction: TextInputAction.next,
+                            obscureText: pp.isObscure,
+                            decoration: InputDecoration(
+                              prefixIcon: const Icon(Icons.key),
+                              hintText: 'Enter Password',
+                              suffixIcon: IconButton(
+                                icon: Icon(pp.isObscure
+                                    ? Icons.visibility
+                                    : Icons.visibility_off),
+                                onPressed: () =>
+                                    passwordProvider.toggleIsObscure(),
+                              ),
+                            ),
                           ),
                         ),
                         kPageItemSpacing2,
+                        Consumer<PasswordProvider>(
+                          builder: (context, pp, child) => TextFormField(
+                            keyboardType: TextInputType.text,
+                            textInputAction: TextInputAction.done,
+                            obscureText: pp.isObscure,
+                            decoration: InputDecoration(
+                              prefixIcon: const Icon(Icons.key),
+                              hintText: 'Re-enter Password',
+                              suffixIcon: IconButton(
+                                icon: Icon(pp.isObscure
+                                    ? Icons.visibility
+                                    : Icons.visibility_off),
+                                onPressed: () =>
+                                    passwordProvider.toggleIsObscure(),
+                              ),
+                            ),
+                          ),
+                        ),
+                        kPageItemSpacing4,
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
@@ -108,7 +128,7 @@ class SignupPage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        kPageItemSpacing,
+                        kPageItemSpacing2,
                         Align(
                           alignment: Alignment.center,
                           child: RichText(

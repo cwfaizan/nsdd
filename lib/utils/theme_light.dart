@@ -25,11 +25,11 @@ final themeDataLight = ThemeData.light().copyWith(
         fontWeight: FontWeight.bold,
         color: kLightPrimaryColor,
       ),
-      // headline4: TextStyle(
-      //   fontSize: 20.sp,
-      //   fontWeight: FontWeight.bold,
-      //   color: kWhiteColor,
-      // ),
+      headline4: TextStyle(
+        fontSize: 20.sp,
+        fontWeight: FontWeight.bold,
+        color: kLightPrimaryColor,
+      ),
       // headline5: TextStyle(
       //   fontSize: 18.sp,
       //   color: kLightTextColor,
@@ -59,13 +59,17 @@ final themeDataLight = ThemeData.light().copyWith(
     color: kLightPrimaryColor,
     size: 30.w,
   ),
+  primaryIconTheme: IconThemeData(
+    color: Colors.yellow[700],
+    size: 24,
+  ),
   inputDecorationTheme: InputDecorationTheme(
     border: kOutlineInputBorderShape,
     enabledBorder: kOutlineInputBorderShape,
     focusedBorder: kOutlineInputBorderShape,
     filled: true,
     fillColor: kLightPlaceholderColor,
-    contentPadding: kContentPadding,
+    contentPadding: kContentPaddingVertical,
     hintStyle: TextStyle(
       fontSize: 14.sp,
       fontWeight: FontWeight.w500,

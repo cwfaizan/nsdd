@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:logger/logger.dart';
 import 'package:nsdd/utils/constants.dart';
 import 'package:nsdd/utils/file_path.dart';
 import 'package:pinput/pinput.dart';
@@ -79,14 +80,14 @@ class OtpPage extends StatelessWidget {
                         'Verify',
                         style: Theme.of(context).textTheme.headline3,
                       ),
-                      kPageItemSpacing,
+                      kPageItemSpacing2,
                       Text(
                         'We sent code to 034*******1 to verify your account',
                         style: Theme.of(context).textTheme.headline6!.copyWith(
                               color: kGrayColor,
                             ),
                       ),
-                      kPageItemSpacing,
+                      kPageItemSpacing2,
                       Pinput(
                         defaultPinTheme: defaultPinTheme,
                         focusedPinTheme: focusedPinTheme,
@@ -96,9 +97,9 @@ class OtpPage extends StatelessWidget {
                         },
                         pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
                         showCursor: true,
-                        onCompleted: (pin) => print(pin),
+                        onCompleted: (pin) => Logger().e(pin),
                       ),
-                      kPageItemSpacing2,
+                      kPageItemSpacing4,
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(

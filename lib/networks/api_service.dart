@@ -1,3 +1,5 @@
+import 'package:dio/dio.dart';
+
 import 'network_client.dart';
 
 class ApiService {
@@ -5,9 +7,13 @@ class ApiService {
 
   ApiService({required this.networkClient});
 
+  Future<Response> getCountriesFromAPI() {
+    return networkClient.get('/api/countries', {});
+  }
+
   // Future<Response> getPrayerTiming(
   //     int timeStamp, Map<String, Object> params) async {
   //   return await networkClient.get('/$timeStamp', params);
   // }
-  
+
 }

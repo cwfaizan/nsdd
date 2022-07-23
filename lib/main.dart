@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nsdd/providers/country_provider.dart';
+import 'package:nsdd/providers/signup_provider.dart';
 import 'package:nsdd/utils/theme_dark.dart';
 import 'package:nsdd/utils/theme_light.dart';
 import 'package:provider/provider.dart';
@@ -26,6 +27,9 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(
             create: (_) => CountryProvider(),
           ),
+          ChangeNotifierProvider(
+            create: (_) => SignupProvider(),
+          ),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
@@ -35,7 +39,7 @@ class MyApp extends StatelessWidget {
           theme: themeDataLight,
           darkTheme: themeDataDark,
           // Routes config
-          initialRoute: RouteGenerator.editProfile,
+          initialRoute: RouteGenerator.signup,
           onGenerateRoute: RouteGenerator.generateRoute,
         ),
       ),

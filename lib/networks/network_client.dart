@@ -4,7 +4,9 @@ import '../errors/exceptions.dart';
 
 class NetworkClient {
   Dio _dio = Dio();
-  NetworkClient(String baseUrl) {
+  NetworkClient({String? baseUrl}) {
+    baseUrl ??= 'https://hrm.talhasultan.dev/api';
+    // baseUrl ??= 'http://127.0.0.1:8000/api';
     BaseOptions baseOptions = BaseOptions(
       receiveTimeout: 20000,
       connectTimeout: 30000,
@@ -16,10 +18,10 @@ class NetworkClient {
     _dio.interceptors.add(LogInterceptor(
       requestBody: false,
       error: true,
-      request: true,
-      requestHeader: true,
+      request: false,
+      requestHeader: false,
       responseBody: false,
-      responseHeader: true,
+      responseHeader: false,
     ));
   }
 
@@ -43,7 +45,8 @@ class NetworkClient {
   }
 
   // for HTTP.POST Request.
-  Future<Response> post(String url, params, {String? token}) async {
+  Future<Response> post(String url, Map<String, dynamic> params,
+      {String? token}) async {
     Response response;
     try {
       Map<String, dynamic> map = {"Accept": "application/json"};
@@ -64,7 +67,8 @@ class NetworkClient {
   }
 
   // for HTTP.POST Request.
-  Future<Response> put(String url, params, {String? token}) async {
+  Future<Response> put(String url, Map<String, dynamic> params,
+      {String? token}) async {
     Response response;
     try {
       Map<String, dynamic> map = {"Accept": "application/json"};

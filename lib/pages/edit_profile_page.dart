@@ -17,7 +17,7 @@ class EditProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Provider.of<CountryProvider>(context, listen: false).getCountriesFromAPI();
+    Provider.of<CountryProvider>(context, listen: false).getCountries();
     return Scaffold(
       body: Stack(
         children: [

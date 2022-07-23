@@ -7,7 +7,20 @@ class ApiService {
 
   ApiService({required this.networkClient});
 
-  Future<Response> getCountriesFromAPI() {
-    return networkClient.get('countries');
+  Future<Response> getCountries() {
+    return networkClient.get('/countries');
+  }
+
+  Future<Response> getProvinces(Map<String, dynamic>? params) {
+    return networkClient.get('/provinces', params: params);
+  }
+
+  Future<Response> getCities(Map<String, dynamic>? params) {
+    return networkClient.get('/cities', params: params);
+  }
+
+  //http post
+  Future<Response> postSignupForm(Map<String, dynamic> params) {
+    return networkClient.post('/signup', params);
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nsdd/providers/password_provider.dart';
+import 'package:nsdd/providers/signup_provider.dart';
 import 'package:nsdd/utils/routes.dart';
 import 'package:provider/provider.dart';
 
@@ -12,6 +13,46 @@ import '../utils/file_path.dart';
 class SignupPage extends StatelessWidget {
   SignupPage({Key? key}) : super(key: key);
   final _globalKeySignupForm = GlobalKey<FormState>();
+  final _idController = TextEditingController();
+  final _nameController = TextEditingController();
+  final _shortNameController = TextEditingController();
+  final _contactNoController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _passwordConfirmationController = TextEditingController();
+
+  void _submitSignupForm(BuildContext context) async {
+    bool isValid = _globalKeySignupForm.currentState!.validate();
+    FocusScope.of(context).unfocus();
+    if (!isValid) {
+      return;
+    }
+    _globalKeySignupForm.currentState!.save();
+    Provider.of<SignupProvider>(context, listen: false).submitSignupForm(
+      _idController,
+      _nameController,
+      _shortNameController,
+      _contactNoController,
+      _passwordController,
+      _passwordConfirmationController,
+    );
+    // try {
+    //   var response = await apiService.login(paramsInMap: {
+    //     'username': _usernameController.text.trim(),
+    //     'password': _passwordController.text.trim(),
+    //   });
+    //   if (response.statusCode == 200) {
+    //     response.data['user_info']['name'] = _nameController.text.trim();
+    //     UserInfo ui = UserInfo.fromJson(response.data['user_info']);
+    //     Helper.saveUserInfo(
+    //       userInfo: ui,
+    //     );
+    //     DatabaseProvider.instance.saveUserInfo(ui);
+    //     Navigator.pushReplacementNamed(context, Routes.homeScreen);
+    //   } else {}
+    // } on RemoteException catch (e) {
+    //   Logger().e(e.dioError);
+    // }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,43 +86,83 @@ class SignupPage extends StatelessWidget {
                         ),
                         kPageItemSpacing2,
                         TextFormField(
+                          controller: _idController,
                           keyboardType: TextInputType.number,
                           textInputAction: TextInputAction.next,
                           decoration: const InputDecoration(
                             prefixIcon: Icon(Icons.pin),
                             hintText: 'Enter cnic no',
                           ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please enter cnic no';
+                            } else if (!RegExp(r'^(\d{13})$').hasMatch(value)) {
+                              return 'Please enter 13 digits valid cnic no';
+                            }
+                            return null;
+                          },
                         ),
                         kPageItemSpacing2,
                         TextFormField(
+                          controller: _nameController,
                           keyboardType: TextInputType.name,
                           textInputAction: TextInputAction.next,
                           decoration: const InputDecoration(
                             prefixIcon: Icon(Icons.person),
                             hintText: 'Enter full name',
                           ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please enter full name';
+                            } else if (!RegExp(r'^[a-zA-Z]+(?:\s[a-zA-Z]+)+$')
+                                .hasMatch(value)) {
+                              return 'Please enter valid full name';
+                            }
+                            return null;
+                          },
                         ),
                         kPageItemSpacing2,
                         TextFormField(
+                          controller: _shortNameController,
                           keyboardType: TextInputType.name,
                           textInputAction: TextInputAction.next,
                           decoration: const InputDecoration(
                             prefixIcon: Icon(Icons.person),
                             hintText: 'Enter short name',
                           ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please enter short name';
+                            } else if (!RegExp(r'^[a-zA-Z]+$')
+                                .hasMatch(value)) {
+                              return 'Please enter valid short name';
+                            }
+                            return null;
+                          },
                         ),
                         kPageItemSpacing2,
                         TextFormField(
+                          controller: _contactNoController,
                           keyboardType: TextInputType.number,
                           textInputAction: TextInputAction.next,
                           decoration: const InputDecoration(
                             prefixIcon: Icon(Icons.phone),
                             hintText: 'Enter mobile no',
                           ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Please enter mobile no';
+                            } else if (!RegExp(r'^[03][0-9]{10,}$')
+                                .hasMatch(value)) {
+                              return 'Please enter valid mobile no';
+                            }
+                            return null;
+                          },
                         ),
                         kPageItemSpacing2,
                         Consumer<PasswordProvider>(
                           builder: (context, pp, child) => TextFormField(
+                            controller: _passwordController,
                             keyboardType: TextInputType.text,
                             textInputAction: TextInputAction.next,
                             obscureText: pp.isObscure,
@@ -96,11 +177,20 @@ class SignupPage extends StatelessWidget {
                                     passwordProvider.toggleIsObscure(),
                               ),
                             ),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter password';
+                              } else if (value.length < 7) {
+                                return 'Please enter at least 8 characters password';
+                              }
+                              return null;
+                            },
                           ),
                         ),
                         kPageItemSpacing2,
                         Consumer<PasswordProvider>(
                           builder: (context, pp, child) => TextFormField(
+                            controller: _passwordConfirmationController,
                             keyboardType: TextInputType.text,
                             textInputAction: TextInputAction.done,
                             obscureText: pp.isObscure,
@@ -115,13 +205,21 @@ class SignupPage extends StatelessWidget {
                                     passwordProvider.toggleIsObscure(),
                               ),
                             ),
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please re-enter password';
+                              } else if (value.length < 7) {
+                                return 'Please re-enter at least 8 characters password';
+                              }
+                              return null;
+                            },
                           ),
                         ),
                         kPageItemSpacing4,
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () => _submitSignupForm(context),
                             child: Text(
                               'Signup',
                               style: Theme.of(context).textTheme.button,

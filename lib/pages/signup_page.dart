@@ -28,6 +28,7 @@ class SignupPage extends StatelessWidget {
     }
     _globalKeySignupForm.currentState!.save();
     Provider.of<SignupProvider>(context, listen: false).submitSignupForm(
+      context,
       _idController,
       _nameController,
       _shortNameController,
@@ -93,6 +94,7 @@ class SignupPage extends StatelessWidget {
                             prefixIcon: Icon(Icons.pin),
                             hintText: 'Enter cnic no',
                           ),
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Please enter cnic no';
@@ -111,6 +113,7 @@ class SignupPage extends StatelessWidget {
                             prefixIcon: Icon(Icons.person),
                             hintText: 'Enter full name',
                           ),
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Please enter full name';
@@ -130,6 +133,7 @@ class SignupPage extends StatelessWidget {
                             prefixIcon: Icon(Icons.person),
                             hintText: 'Enter short name',
                           ),
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Please enter short name';
@@ -149,6 +153,7 @@ class SignupPage extends StatelessWidget {
                             prefixIcon: Icon(Icons.phone),
                             hintText: 'Enter mobile no',
                           ),
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Please enter mobile no';
@@ -177,6 +182,8 @@ class SignupPage extends StatelessWidget {
                                     passwordProvider.toggleIsObscure(),
                               ),
                             ),
+                            autovalidateMode:
+                                AutovalidateMode.onUserInteraction,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
                                 return 'Please enter password';
@@ -205,6 +212,8 @@ class SignupPage extends StatelessWidget {
                                     passwordProvider.toggleIsObscure(),
                               ),
                             ),
+                            autovalidateMode:
+                                AutovalidateMode.onUserInteraction,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
                                 return 'Please re-enter password';

@@ -7,7 +7,8 @@ import 'package:nsdd/utils/file_path.dart';
 import 'package:pinput/pinput.dart';
 
 class OtpPage extends StatelessWidget {
-  const OtpPage({super.key});
+  final Map<String, dynamic> args;
+  const OtpPage({super.key, required this.args});
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +82,7 @@ class OtpPage extends StatelessWidget {
                       ),
                       kPageItemSpacing2,
                       Text(
-                        'We sent code to 034*******1 to verify your account',
+                        args['message'],
                         style: Theme.of(context).textTheme.headline6!.copyWith(
                               color: kGrayColor,
                             ),
@@ -98,7 +99,10 @@ class OtpPage extends StatelessWidget {
                         },
                         pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
                         showCursor: true,
-                        onCompleted: (pin) => Logger().e(pin),
+                        onCompleted: (pin) => Logger().e('onCompleted $pin'),
+                        onSubmitted: (pin) {
+                          Logger().e('onSubmitted $pin');
+                        },
                       ),
                       kPageItemSpacing4,
                       SizedBox(

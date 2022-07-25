@@ -5,8 +5,8 @@ import '../errors/exceptions.dart';
 class NetworkClient {
   Dio _dio = Dio();
   NetworkClient({String? baseUrl}) {
-    baseUrl ??= 'https://hrm.talhasultan.dev/api';
-    // baseUrl ??= 'http://127.0.0.1:8000/api';
+    // baseUrl ??= 'https://hrm.talhasultan.dev/api';
+    baseUrl ??= 'http://10.5.6.55:8000/api';
     BaseOptions baseOptions = BaseOptions(
       receiveTimeout: 20000,
       connectTimeout: 30000,
@@ -20,7 +20,7 @@ class NetworkClient {
       error: true,
       request: false,
       requestHeader: false,
-      responseBody: false,
+      responseBody: true,
       responseHeader: false,
     ));
   }

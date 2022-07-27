@@ -1,9 +1,19 @@
+import 'package:hive_flutter/adapters.dart';
+part 'user.g.dart';
+
+@HiveType(typeId: 0)
 class User {
+  @HiveField(0)
   final String message;
+  @HiveField(1)
   final int userId;
+  @HiveField(2)
   final String shortName;
+  @HiveField(3)
   final String token;
+  @HiveField(4)
   final DateTime tokenExpiresAt;
+  @HiveField(5)
   final List<dynamic> roles;
 
   User({
@@ -23,4 +33,13 @@ class User {
         tokenExpiresAt: DateTime.parse(json['token_expires_at']),
         roles: json['roles'],
       );
+
+  Map<String, dynamic> toJson() => {
+        'message': message,
+        'user_id': userId,
+        'short_name': shortName,
+        'token': token,
+        'token_expires_at': tokenExpiresAt.toString(),
+        'roles': roles
+      };
 }

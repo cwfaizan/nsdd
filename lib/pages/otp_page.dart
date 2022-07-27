@@ -54,22 +54,6 @@ class OtpPage extends StatelessWidget {
               FilePath.topRightCornerBg(context),
             ),
           ),
-          Positioned(
-            top: 30.h,
-            child: InkWell(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: Padding(
-                padding: REdgeInsets.all(12.w),
-                child: Icon(
-                  Icons.arrow_back,
-                  color: Theme.of(context).primaryColor,
-                  size: 30.w,
-                ),
-              ),
-            ),
-          ),
           SafeArea(
             child: Padding(
               padding: kPagePadding,

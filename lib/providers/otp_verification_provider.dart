@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:nsdd/models/user.dart';
 import 'package:nsdd/networks/network_client.dart';
+import 'package:nsdd/utils/helper.dart';
 import 'package:nsdd/utils/routes.dart';
 
 class OTPVerificationProvider with ChangeNotifier {
@@ -29,6 +30,8 @@ class OTPVerificationProvider with ChangeNotifier {
     if (mp['success']) {
       User user = User.fromJson(mp['data']);
       Logger().i('Testttttttttttt ${user.roles}');
+      // ignore: use_build_context_synchronously
+      Helper.addUser(user);
       // ignore: use_build_context_synchronously
       Navigator.pushReplacementNamed(
         context,

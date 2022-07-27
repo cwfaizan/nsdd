@@ -6,8 +6,8 @@ class NetworkClient {
   Dio _dio = Dio();
   NetworkClient({String? baseUrl}) {
     // baseUrl ??= 'https://hrm.talhasultan.dev/api';
-    // baseUrl ??= 'http://10.5.6.55:8000/api';
-    baseUrl ??= 'http://192.168.0.100:8000/api';
+    baseUrl ??= 'http://10.5.6.55:8000/api';
+    // baseUrl ??= 'http://192.168.0.100:8000/api';
     BaseOptions baseOptions = BaseOptions(
       receiveTimeout: 20000,
       connectTimeout: 30000,

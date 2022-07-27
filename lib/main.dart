@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:nsdd/models/user.dart';
 import 'package:nsdd/providers/country_provider.dart';
 import 'package:nsdd/providers/otp_verification_provider.dart';
 import 'package:nsdd/providers/signup_provider.dart';
@@ -11,6 +13,8 @@ import 'utils/routes.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  Hive.initFlutter();
+  Hive.registerAdapter(UserAdapter());
   runApp(const MyApp());
 }
 

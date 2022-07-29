@@ -3,10 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:nsdd/pages/otp_page.dart';
-import 'package:nsdd/utils/routes.dart';
 
 import '../errors/exceptions.dart';
-import '../networks/api_service.dart';
 import '../networks/network_client.dart';
 
 class SignupProvider with ChangeNotifier {
@@ -34,8 +32,8 @@ class SignupProvider with ChangeNotifier {
           'password_confirmation': passwordConfirmationController.text.trim(),
         },
       );
-      Map<String, dynamic> mp = jsonDecode(res.toString());
-      if (mp['success']) {
+      if (res.statusCode == 200) {
+        Map<String, dynamic> mp = jsonDecode(res.toString());
         nameController.clear();
         shortNameController.clear();
         contactNoController.clear();
@@ -47,8 +45,9 @@ class SignupProvider with ChangeNotifier {
           MaterialPageRoute(
             builder: (BuildContext context) => OtpPage(
               args: {
-                'id': idController.text,
-                'message': mp['message'],
+                'user_id': idController.text,
+                'pin_message': mp['data']['pin_message'],
+                'pin_type': mp['data']['pin_type'],
               },
             ),
           ),

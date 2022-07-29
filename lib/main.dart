@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:nsdd/models/user.dart';
 import 'package:nsdd/providers/country_provider.dart';
+import 'package:nsdd/providers/login_provider.dart';
 import 'package:nsdd/providers/otp_verification_provider.dart';
 import 'package:nsdd/providers/signup_provider.dart';
 import 'package:nsdd/utils/theme_dark.dart';
@@ -11,9 +12,9 @@ import 'package:provider/provider.dart';
 import 'providers/password_provider.dart';
 import 'utils/routes.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Hive.initFlutter();
+  await Hive.initFlutter();
   Hive.registerAdapter(UserAdapter());
   runApp(const MyApp());
 }
@@ -38,6 +39,9 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(
             create: (_) => OTPVerificationProvider(),
           ),
+          ChangeNotifierProvider(
+            create: (_) => LoginProvider(),
+          ),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
@@ -47,7 +51,7 @@ class MyApp extends StatelessWidget {
           theme: themeDataLight,
           darkTheme: themeDataDark,
           // Routes config
-          initialRoute: RouteGenerator.login,
+          initialRoute: RouteGenerator.splash,
           onGenerateRoute: RouteGenerator.generateRoute,
         ),
       ),

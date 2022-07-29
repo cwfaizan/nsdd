@@ -68,7 +68,7 @@ class OtpPage extends StatelessWidget {
                       ),
                       kPageItemSpacing2,
                       Text(
-                        args['message'],
+                        args['pin_message'],
                         style: Theme.of(context).textTheme.headline6!.copyWith(
                               color: kGrayColor,
                             ),
@@ -95,18 +95,10 @@ class OtpPage extends StatelessWidget {
                               otp.otpVerified = true;
                               Provider.of<OTPVerificationProvider>(context,
                                       listen: false)
-                                  .verifyOTP(
-                                      _otpFormKey, context, args['id'], 1, pin);
+                                  .verifyOTP(_otpFormKey, context, args['user_id'],
+                                      args['pin_type'], pin);
                             },
                           ),
-                        ),
-                      ),
-                      kPageItemSpacing4,
-                      SizedBox(
-                        width: double.infinity,
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          child: const Text('Verify'),
                         ),
                       ),
                     ],

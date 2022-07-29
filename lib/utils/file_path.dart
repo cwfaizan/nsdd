@@ -24,4 +24,6 @@ class FilePath {
         ? 'assets/svgs/profile_top_light_bg.svg'
         : 'assets/svgs/profile_top_light_bg.svg';
   }
+
+  static const nutechLogo = 'assets/images/logo.png';
 }

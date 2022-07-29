@@ -9,6 +9,7 @@ import 'package:nsdd/pages/otp_page.dart';
 import 'package:nsdd/pages/profile_page.dart';
 import 'package:nsdd/pages/qualification_page.dart';
 import 'package:nsdd/pages/signup_page.dart';
+import 'package:nsdd/pages/splash_page.dart';
 
 import '../errors/exceptions.dart';
 import '../pages/edit_profile_page.dart';
@@ -32,7 +33,9 @@ class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case login:
-        return MaterialPageRoute(builder: (_) => LoginPage());
+        return MaterialPageRoute(builder: (_) => const LoginPage());
+      case splash:
+        return MaterialPageRoute(builder: (_) => const SplashPage());
       case signup:
         return MaterialPageRoute(builder: (_) => SignupPage());
       case forgotPassword:

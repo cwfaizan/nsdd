@@ -1,6 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nsdd/pages/login_page.dart';
+import 'package:nsdd/utils/helper.dart';
 
 import '../utils/routes.dart';
 
@@ -54,7 +56,16 @@ class AppDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.logout),
             title: const Text('Logout'),
-            onTap: () {},
+            onTap: () {
+              Helper.deleteUser();
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => LoginPage(),
+                ),
+                (route) => false,
+              );
+            },
           ),
           const Divider(),
         ],

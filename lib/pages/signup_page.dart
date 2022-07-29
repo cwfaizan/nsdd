@@ -36,23 +36,6 @@ class SignupPage extends StatelessWidget {
       _passwordController,
       _passwordConfirmationController,
     );
-    // try {
-    //   var response = await apiService.login(paramsInMap: {
-    //     'username': _usernameController.text.trim(),
-    //     'password': _passwordController.text.trim(),
-    //   });
-    //   if (response.statusCode == 200) {
-    //     response.data['user_info']['name'] = _nameController.text.trim();
-    //     UserInfo ui = UserInfo.fromJson(response.data['user_info']);
-    //     Helper.saveUserInfo(
-    //       userInfo: ui,
-    //     );
-    //     DatabaseProvider.instance.saveUserInfo(ui);
-    //     Navigator.pushReplacementNamed(context, Routes.homeScreen);
-    //   } else {}
-    // } on RemoteException catch (e) {
-    //   Logger().e(e.dioError);
-    // }
   }
 
   @override
@@ -189,6 +172,8 @@ class SignupPage extends StatelessWidget {
                                 return 'Please enter password';
                               } else if (value.length < 7) {
                                 return 'Please enter at least 8 characters password';
+                              } else if (value.length > 12) {
+                                return 'Please enter at most 12 characters password';
                               }
                               return null;
                             },

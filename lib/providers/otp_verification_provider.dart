@@ -1,8 +1,4 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:logger/logger.dart';
-import 'package:nsdd/models/user.dart';
 import 'package:nsdd/networks/network_client.dart';
 import 'package:nsdd/utils/helper.dart';
 import 'package:nsdd/utils/routes.dart';
@@ -14,28 +10,27 @@ class OTPVerificationProvider with ChangeNotifier {
   Future<void> verifyOTP(
     final otpFormKey,
     BuildContext context,
-    final id,
+    final userId,
     final pinType,
     final pin,
   ) async {
     final res = await networkClient.post(
       '/verify-contact-no',
       {
-        'id': id,
+        'user_id': userId,
         'pin_type': pinType,
         'pin': int.parse(pin),
       },
     );
-    Map<String, dynamic> mp = jsonDecode(res.toString());
-    if (mp['success']) {
-      User user = User.fromJson(mp['data']);
-      Logger().i('Testttttttttttt ${user.roles}');
-      // ignore: use_build_context_synchronously
-      Helper.addUser(user);
+    if (res.statusCode == 200) {
+      if (pinType == 3) {
+        Helper.showSnackBar(
+            context: context, message: 'Please login to continue');
+      }
       // ignore: use_build_context_synchronously
       Navigator.pushReplacementNamed(
         context,
-        RouteGenerator.home,
+        RouteGenerator.login,
       );
     } else {
       otpVerified = false;

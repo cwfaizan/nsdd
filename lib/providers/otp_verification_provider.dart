@@ -15,7 +15,7 @@ class OTPVerificationProvider with ChangeNotifier {
     final pin,
   ) async {
     final res = await networkClient.post(
-      '/verify-contact-no',
+      '/verify-pin',
       {
         'user_id': userId,
         'pin_type': pinType,

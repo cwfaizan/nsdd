@@ -26,7 +26,7 @@ class LoginProvider with ChangeNotifier {
         User user = User.fromJson(mp['data']);
         Helper.addUser(user);
         // ignore: use_build_context_synchronously
-        Navigator.pushNamed(
+        Navigator.pushReplacementNamed(
           context,
           RouteGenerator.home,
         );

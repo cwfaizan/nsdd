@@ -17,7 +17,7 @@ class NetworkClient {
     _dio = Dio(baseOptions);
     // adding logging interceptor.
     _dio.interceptors.add(LogInterceptor(
-      requestBody: false,
+      requestBody: true,
       error: true,
       request: false,
       requestHeader: false,

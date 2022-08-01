@@ -50,6 +50,7 @@ dependencies:
   cached_network_image: ^3.2.1
   hive_flutter: ^1.1.0
   lottie: ^1.4.0
+  sqflite: ^2.0.3
 
 dev_dependencies:
   flutter_test:

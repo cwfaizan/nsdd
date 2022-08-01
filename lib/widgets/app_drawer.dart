@@ -44,13 +44,20 @@ class AppDrawer extends StatelessWidget {
           ),
           const Divider(),
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.school,
               // size: Theme.of(context).iconTheme.size,
               // color: Theme.of(context).iconTheme.color,
             ),
             title: const Text('Qualification'),
             onTap: () {},
+          ),
+          const Divider(),
+          ListTile(
+            leading: const Icon(Icons.lock),
+            title: const Text('Change Password'),
+            onTap: () =>
+                Navigator.pushNamed(context, RouteGenerator.changePassword),
           ),
           const Divider(),
           ListTile(
@@ -61,7 +68,7 @@ class AppDrawer extends StatelessWidget {
               Navigator.pushAndRemoveUntil(
                 context,
                 MaterialPageRoute(
-                  builder: (BuildContext context) => LoginPage(),
+                  builder: (BuildContext context) => const LoginPage(),
                 ),
                 (route) => false,
               );

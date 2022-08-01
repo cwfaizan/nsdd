@@ -10,8 +10,8 @@ import 'package:nsdd/utils/routes.dart';
 
 class LoginProvider with ChangeNotifier {
   NetworkClient networkClient = NetworkClient();
-  Future<void> login(BuildContext context, final idController,
-      final passwordController) async {
+  Future<void> login(BuildContext context, final toggleLoader,
+      final idController, final passwordController) async {
     try {
       final res = await networkClient.post(
         '/login',
@@ -33,6 +33,8 @@ class LoginProvider with ChangeNotifier {
       }
     } on RemoteException catch (e) {
       Logger().e(e.dioError);
+    } finally {
+      toggleLoader();
     }
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lottie/lottie.dart';
 import 'package:nsdd/providers/login_provider.dart';
 import 'package:nsdd/providers/password_provider.dart';
 import 'package:nsdd/utils/file_path.dart';
@@ -30,14 +31,19 @@ class _LoginPageState extends State<LoginPage> {
       return;
     }
     _globalKeyLoginForm.currentState!.save();
-    // setState(() {
-    //   showLoader = true;
-    // });
+    toggleLoader();
     Provider.of<LoginProvider>(context, listen: false).login(
       context,
+      toggleLoader,
       _idController,
       _passwordController,
     );
+  }
+
+  void toggleLoader() {
+    setState(() {
+      showLoader = !showLoader;
+    });
   }
 
   @override
@@ -46,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
         Provider.of<PasswordProvider>(context, listen: false);
     return Scaffold(
       body: showLoader
-          ? const Center(child: CircularProgressIndicator())
+          ? Center(child: Lottie.asset(FilePath.loader(context)))
           : Stack(
               children: [
                 Positioned(
@@ -101,7 +107,7 @@ class _LoginPageState extends State<LoginPage> {
                                   textInputAction: TextInputAction.done,
                                   obscureText: pp.isObscure,
                                   decoration: InputDecoration(
-                                    prefixIcon: const Icon(Icons.key),
+                                    prefixIcon: const Icon(Icons.lock),
                                     hintText: 'Enter Password',
                                     suffixIcon: IconButton(
                                       icon: Icon(pp.isObscure

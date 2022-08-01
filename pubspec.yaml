@@ -49,6 +49,7 @@ dependencies:
   im_stepper: ^1.0.1+1
   cached_network_image: ^3.2.1
   hive_flutter: ^1.1.0
+  lottie: ^1.4.0
 
 dev_dependencies:
   flutter_test:
@@ -78,6 +79,7 @@ flutter:
   assets:
     - assets/svgs/
     - assets/images/
+    - assets/lotties/
     # - assets/images/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

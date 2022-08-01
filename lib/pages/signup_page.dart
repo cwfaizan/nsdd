@@ -155,7 +155,7 @@ class SignupPage extends StatelessWidget {
                             textInputAction: TextInputAction.next,
                             obscureText: pp.isObscure,
                             decoration: InputDecoration(
-                              prefixIcon: const Icon(Icons.key),
+                              prefixIcon: const Icon(Icons.lock),
                               hintText: 'Enter Password',
                               suffixIcon: IconButton(
                                 icon: Icon(pp.isObscure
@@ -187,7 +187,7 @@ class SignupPage extends StatelessWidget {
                             textInputAction: TextInputAction.done,
                             obscureText: pp.isObscure,
                             decoration: InputDecoration(
-                              prefixIcon: const Icon(Icons.key),
+                              prefixIcon: const Icon(Icons.lock),
                               hintText: 'Re-enter Password',
                               suffixIcon: IconButton(
                                 icon: Icon(pp.isObscure
@@ -204,6 +204,8 @@ class SignupPage extends StatelessWidget {
                                 return 'Please re-enter password';
                               } else if (value.length < 7) {
                                 return 'Please re-enter at least 8 characters password';
+                              } else if (value.length > 12) {
+                                return 'Please enter at most 12 characters password';
                               }
                               return null;
                             },

@@ -25,5 +25,11 @@ class FilePath {
         : 'assets/svgs/profile_top_light_bg.svg';
   }
 
+  static String loader(BuildContext context) {
+    return Theme.of(context).brightness == Brightness.light
+        ? 'assets/lotties/loader_light.json'
+        : 'assets/lotties/loader_dark.json';
+  }
+
   static const nutechLogo = 'assets/images/logo.png';
 }

@@ -5,7 +5,7 @@ import '../errors/exceptions.dart';
 class NetworkClient {
   Dio _dio = Dio();
   NetworkClient({String? baseUrl}) {
-    // baseUrl ??= 'https://hrm.talhasultan.dev/api';
+    // baseUrl ??= 'https://nutech.codewithfaizan.com/api';
     baseUrl ??= 'http://10.5.6.55:8000/api';
     // baseUrl ??= 'http://192.168.0.100:8000/api';
     BaseOptions baseOptions = BaseOptions(

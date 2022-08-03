@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nsdd/networks/network_client.dart';
 import 'package:nsdd/utils/helper.dart';
-import 'package:nsdd/utils/routes.dart';
 
 class OTPVerificationProvider with ChangeNotifier {
   NetworkClient networkClient = NetworkClient();
@@ -10,27 +9,26 @@ class OTPVerificationProvider with ChangeNotifier {
   Future<void> verifyOTP(
     final otpFormKey,
     BuildContext context,
-    final userId,
-    final pinType,
+    final args,
     final pin,
   ) async {
     final res = await networkClient.post(
       '/verify-pin',
       {
-        'user_id': userId,
-        'pin_type': pinType,
+        'user_id': args['user_id'],
+        'pin_type': args['pin_type'],
         'pin': int.parse(pin),
       },
     );
     if (res.statusCode == 200) {
-      if (pinType == 3) {
+      if (args['pin_type'] == 3) {
         Helper.showSnackBar(
             context: context, message: 'Please login to continue');
       }
       // ignore: use_build_context_synchronously
       Navigator.pushReplacementNamed(
         context,
-        RouteGenerator.login,
+        args['page_route'],
       );
     } else {
       otpVerified = false;

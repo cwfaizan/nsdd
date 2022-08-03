@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:nsdd/pages/otp_page.dart';
+import 'package:nsdd/utils/routes.dart';
 
 import '../errors/exceptions.dart';
 import '../networks/network_client.dart';
@@ -48,6 +49,7 @@ class SignupProvider with ChangeNotifier {
                 'user_id': idController.text,
                 'pin_message': mp['data']['pin_message'],
                 'pin_type': mp['data']['pin_type'],
+                'page_route': RouteGenerator.login,
               },
             ),
           ),

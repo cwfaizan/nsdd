@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nsdd/models/course.dart';
+import 'package:nsdd/pages/course_detail_page.dart';
 
 import '../utils/constants.dart';
 
@@ -11,68 +12,76 @@ class CourseCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      // semanticContainer: true,
-      clipBehavior: Clip.hardEdge,
-      shape: kRoundedRectangleBorderShape,
-      // borderOnForeground: true,
-      elevation: 4,
-      // shadowColor:Colors.green,
-      margin: REdgeInsets.all(5),
-      child: Row(
-        children: [
-          CachedNetworkImage(
-            imageUrl: course.imageUrl,
-            placeholder: (context, url) => const CircularProgressIndicator(),
-            errorWidget: (context, url, error) => const Icon(Icons.error),
-            height: 120.h,
-            width: 120.w,
-            fit: BoxFit.fill,
-          ),
-          Expanded(
-            child: Padding(
-              padding: REdgeInsets.all(8.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    course.title,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text('Charges'),
-                      if (course.charges == 0) const Text('Free'),
-                      if (course.charges != 0)
-                        Text('${course.charges}/${course.chargesUnit}'),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text('Duration'),
-                      Text('${course.duration}-${course.durationUnit}'),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text('Classes'),
-                      Text(course.classDays),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Text('Class Timing'),
-                      Text(course.classTiming),
-                    ],
-                  ),
-                ],
+    return InkWell(
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => CourseDetailPage(course: course),
+        ),
+      ),
+      child: Card(
+        // semanticContainer: true,
+        clipBehavior: Clip.hardEdge,
+        shape: kRoundedRectangleBorderShape,
+        // borderOnForeground: true,
+        elevation: 4,
+        // shadowColor:Colors.green,
+        margin: REdgeInsets.all(5),
+        child: Row(
+          children: [
+            CachedNetworkImage(
+              imageUrl: course.imageUrl,
+              placeholder: (context, url) => const CircularProgressIndicator(),
+              errorWidget: (context, url, error) => const Icon(Icons.error),
+              height: 120.h,
+              width: 120.w,
+              fit: BoxFit.fill,
+            ),
+            Expanded(
+              child: Padding(
+                padding: REdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      course.title,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text('Charges'),
+                        if (course.charges == 0) const Text('Free'),
+                        if (course.charges != 0)
+                          Text('${course.charges}/${course.chargesUnit}'),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text('Duration'),
+                        Text('${course.duration}-${course.durationUnit}'),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text('Classes'),
+                        Text(course.classDays),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text('Class Timing'),
+                        Text(course.classTiming),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

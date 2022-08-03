@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:im_stepper/stepper.dart';
 
 class AlumniStepperPage extends StatefulWidget {
-  AlumniStepperPage({Key? key}) : super(key: key);
+  const AlumniStepperPage({Key? key}) : super(key: key);
 
   @override
   State<AlumniStepperPage> createState() => _AlumniStepperPageState();
@@ -42,7 +42,7 @@ class _AlumniStepperPageState extends State<AlumniStepperPage> {
                     activeStep++;
                   });
                 },
-                child: Text('Next'),
+                child: const Text('Next'),
               ),
             if (activeStep > 0)
               ElevatedButton(
@@ -51,12 +51,12 @@ class _AlumniStepperPageState extends State<AlumniStepperPage> {
                     activeStep--;
                   });
                 },
-                child: Text('Back'),
+                child: const Text('Back'),
               ),
             if (activeStep == upperBound)
               ElevatedButton(
                 onPressed: () {},
-                child: Text('Save'),
+                child: const Text('Save'),
               ),
           ],
         ),

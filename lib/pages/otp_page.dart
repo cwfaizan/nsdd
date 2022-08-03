@@ -95,8 +95,7 @@ class OtpPage extends StatelessWidget {
                               otp.otpVerified = true;
                               Provider.of<OTPVerificationProvider>(context,
                                       listen: false)
-                                  .verifyOTP(_otpFormKey, context, args['user_id'],
-                                      args['pin_type'], pin);
+                                  .verifyOTP(_otpFormKey, context, args, pin);
                             },
                           ),
                         ),

@@ -41,11 +41,11 @@ class RouteGenerator {
       case forgotPassword:
         return MaterialPageRoute(builder: (_) => ForgotPasswordPage());
       case otp:
-        return MaterialPageRoute(builder: (_) => OtpPage(args: {}));
+        return MaterialPageRoute(builder: (_) => OtpPage(args: const {}));
       case home:
         return MaterialPageRoute(builder: (_) => HomePage());
       case changePassword:
-        return MaterialPageRoute(builder: (_) => ChangePasswordPage());
+        return MaterialPageRoute(builder: (_) => const ChangePasswordPage());
       case editProfile:
         return MaterialPageRoute(builder: (_) => EditProfilePage());
       case profile:

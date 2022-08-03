@@ -102,77 +102,77 @@ class _ProfilePageState extends State<ProfilePage> {
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: const [
                   ListTile(
-                    leading: const Icon(Icons.pin),
+                    leading: Icon(Icons.pin),
                     title: Text('32104-12345-3'),
                   ),
                   ListTile(
-                    leading: const Icon(Icons.person),
+                    leading: Icon(Icons.person),
                     title: Text('full name'),
                   ),
                   ListTile(
-                    leading: const Icon(Icons.email),
+                    leading: Icon(Icons.email),
                     title: Text('email address'),
                   ),
                   ListTile(
-                    leading: const Icon(Icons.phone),
+                    leading: Icon(Icons.phone),
                     title: Text('0321-1234567'),
                   ),
                   ListTile(
-                    leading: const Icon(Icons.phone),
+                    leading: Icon(Icons.phone),
                     title: Text('Other contact no'),
                   ),
                   ListTile(
-                    leading: const Icon(Icons.pin),
+                    leading: Icon(Icons.pin),
                     title: Text('32104-12345-3'),
                   ),
                   ListTile(
-                    leading: const Icon(Icons.wc),
+                    leading: Icon(Icons.wc),
                     title: Text('gender'),
                   ),
                   ListTile(
-                    leading: const Icon(Icons.date_range),
+                    leading: Icon(Icons.date_range),
                     title: Text('Date of Birth'),
                   ),
                   ListTile(
-                    leading: const Icon(Icons.person),
+                    leading: Icon(Icons.person),
                     title: Text('Enter father/guardian name'),
                   ),
                   ListTile(
-                    leading: const Icon(Icons.phone),
+                    leading: Icon(Icons.phone),
                     title: Text('Father/guardian contact no'),
                   ),
                   ListTile(
-                    leading: const Icon(Icons.work),
+                    leading: Icon(Icons.work),
                     title: Text('father/guardian occupation'),
                   ),
                   ListTile(
-                    leading: const Icon(Icons.location_on),
+                    leading: Icon(Icons.location_on),
                     title: Text('postal address'),
                   ),
                   ListTile(
-                    leading: const Icon(Icons.location_on),
+                    leading: Icon(Icons.location_on),
                     title: Text('permanent address'),
                   ),
                   ListTile(
-                    leading: const Icon(Icons.location_city),
+                    leading: Icon(Icons.location_city),
                     title: Text('domicile province'),
                   ),
                   ListTile(
-                    leading: const Icon(Icons.location_city),
+                    leading: Icon(Icons.location_city),
                     title: Text('domicile district'),
                   ),
                   ListTile(
-                    leading: const Icon(Icons.transfer_within_a_station),
+                    leading: Icon(Icons.transfer_within_a_station),
                     title: Text('Minority'),
                   ),
                   ListTile(
-                    leading: const Icon(Icons.wheelchair_pickup),
+                    leading: Icon(Icons.wheelchair_pickup),
                     title: Text('Disablity'),
                   ),
                   ListTile(
-                    leading: const Icon(Icons.add_location_alt),
+                    leading: Icon(Icons.add_location_alt),
                     title: Text('other nationality'),
                   ),
                 ],

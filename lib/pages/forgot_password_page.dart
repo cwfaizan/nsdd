@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nsdd/providers/forgot_password_provider.dart';
-import 'package:nsdd/utils/routes.dart';
 import 'package:provider/provider.dart';
 
 import '../utils/constants.dart';
